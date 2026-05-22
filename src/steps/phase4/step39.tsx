@@ -573,6 +573,7 @@ const step39: SurveyStep = {
   id: 39,
   customPage: CustomPage39,
   showHeader: false,
+  wrapperClass: "step39-bg",
 };
 
 export default step39;

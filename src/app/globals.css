@@ -260,7 +260,7 @@ body {
   margin: 0 auto;
   padding: 0;
   position: relative;
-  background: var(--color-primary-50, #fffaef);
+  background: linear-gradient(180deg, #ffffff 0%, #fffaef 50.48%, #ffffff 100%);
 }
 
 /* Background decorative blobs */
@@ -302,7 +302,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(248, 240, 255, 0.85);
+  background: linear-gradient(180deg, #ffffff 0%, #fffaef 50.48%, #ffffff 100%);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -345,7 +345,7 @@ body {
   position: sticky;
   top: 56px;
   z-index: 9;
-  background: rgba(248, 240, 255, 0.85);
+  background: linear-gradient(180deg, #ffffff 0%, #fffaef 50.48%, #ffffff 100%);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -392,7 +392,7 @@ body {
   z-index: 1;
   opacity: 0;
   height: 100dvh;
-  background: var(--color-primary-50, #fffaef);
+  background: linear-gradient(180deg, #ffffff 0%, #fffaef 50.48%, #ffffff 100%);
 }
 
 .question-screen.entering-forward {
@@ -1267,4 +1267,8 @@ body {
   background: var(--color-bg-primary-subtle, #fffaef);
   border-radius: var(--radius-xl);
   padding: 12px 16px;
+}
+
+.step39-bg{
+  background: var(--color-primary-50, #FFFAEF) !important;
 }
