@@ -360,7 +360,7 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 8px 20px 40px;
+  padding: 8px 20px 28px;
   position: relative;
   z-index: 1;
   opacity: 0;
@@ -759,7 +759,7 @@ body {
     max-width: 480px;
     margin: 0 auto;
     min-height: 100dvh;
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-sm);
   }
 
   .question-text {
