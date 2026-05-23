@@ -263,33 +263,6 @@ body {
   background: linear-gradient(180deg, #ffffff 0%, #fffaef 50.48%, #ffffff 100%);
 }
 
-/* Background decorative blobs */
-/* .survey-container::before {
-  content: "";
-  position: fixed;
-  top: -120px;
-  right: -80px;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  background: var(--color-primary-50, #fffaef);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.survey-container::after {
-  content: "";
-  position: fixed;
-  bottom: -100px;
-  left: -60px;
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  background: var(--color-primary-50, #fffaef);
-  pointer-events: none;
-  z-index: 0;
-} */
-
 /* ============================
    Header / Navigation
    ============================ */
@@ -387,7 +360,7 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 8px 20px 60px;
+  padding: 8px 20px 40px;
   position: relative;
   z-index: 1;
   opacity: 0;
