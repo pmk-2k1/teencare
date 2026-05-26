@@ -8,12 +8,20 @@ const CustomPage3 = ({ onNext }: { onNext: () => void }) => {
 
   return (
     <div className="flex flex-col items-center justify-between pt-10! min-h-full! flex-1" >
-      <Image
-        src="/images/step3-image.png"
-        alt="Survey Image"
-        width={500}
-        height={500}
-        className="w-full h-auto object-contain animate-bounce-in" />
+      <div className="flex flex-col gap-7 justify-center justify-center">
+        <div className="px-3! flex justify-center items-center">
+          <Image
+            src="/images/step3Image.png"
+            alt="Survey Image"
+            width={500}
+            height={500}
+            className="w-full h-auto object-contain animate-bounce-in" />
+        </div>
+        <div className="flex flex-col gap-2 justify-center items-center">
+          <p className="text-[#18181B] text-[32px] font-semibold text-center">Become the parent you want to be</p>
+          <p className="text-[#18181B] text-[16px] text-center">You already know what kind of parent you want to be. Let’s figure out what’s getting in the way.</p>
+        </div>
+      </div>
 
       <Button variant="primary" onClick={onNext} id="btn-continue" className="text-[#18181B] w-full" >
         {t("continue")}

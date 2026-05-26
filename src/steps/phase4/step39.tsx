@@ -66,7 +66,7 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
         </div>
         <div className="bg-[#FFFFFF] rounded-sm px-3! py-5! flex flex-col gap-5 items-center justify-center w-full">
           <div className="flex flex-col gap-5 w-full">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 w-full">
+            <div className="flex flex-col gap-5 w-full">
               <OptionCardWithLabel
                 topLabel="Intro Offer"
                 title="1 week"
@@ -363,7 +363,7 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
         <p className="font-bold text-[32px] text-[#18181B]">Choose your plan</p>
         <div className=" flex flex-col gap-5 items-center justify-center w-full">
           <div className="flex flex-col gap-5 w-full">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 w-full">
+            <div className="flex flex-col gap-5 w-full">
               <OptionCardWithLabel
                 topLabel="Intro Offer"
                 title="1 week"
@@ -424,7 +424,7 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
 
         <div className="flex flex-col gap-5 items-center justify-center w-full">
           <div className="flex flex-col gap-5 w-full">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 w-full">
+            <div className="flex flex-col gap-5 w-full">
               <OptionCardWithLabel
                 discount="Google Pay"
                 image={

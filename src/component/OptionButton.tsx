@@ -21,7 +21,7 @@ export default function OptionButton({
 }: OptionButtonProps) {
   return (
     <button
-      className={`option-button ${selected ? "selected" : ""}`}
+      className={`option-button ${selected ? "selected bg-[#FFF7E8]! border-[#FFAC08]!" : ""} hover:bg-[#FFF7E8] hover:border-[#FFAC08] transition-colors`}
       onClick={onClick}
       style={{ animationDelay: `${animationDelay}s` }}
     >

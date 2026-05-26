@@ -8,13 +8,20 @@ const CustomPage31 = ({ onNext }: { onNext: () => void }) => {
 
   return (
     <div className="flex flex-col items-center justify-between pt-10! min-h-full! flex-1">
-      <Image
-        src="/images/step31-image.png"
-        alt="Survey Image"
-        width={500}
-        height={500}
-        className="w-full h-auto object-contain animate-bounce-in"
-      />
+      <div className="flex flex-col gap-7 justify-center justify-center">
+        <div className="px-3! flex justify-center items-center">
+          <Image
+            src="/images/step31Image.png"
+            alt="Survey Image"
+            width={500}
+            height={500}
+            className="w-full h-auto object-contain animate-bounce-in" />
+        </div>
+        <div className="flex flex-col gap-2 justify-center items-center">
+          <p className="text-[#18181B] text-[32px] font-semibold text-center">Your balance, their blueprint</p>
+          <p className="text-[#18181B] text-[16px] text-center">Prioritizing your well-being isn't selfish. Kids learn how to handle life by watching you handle yours.</p>
+        </div>
+      </div>
 
       <Button
         variant="outline"

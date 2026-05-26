@@ -9,7 +9,7 @@ const CustomPage = ({ onNext }: { onNext: () => void }) => {
   const { t } = useI18n();
 
   return (
-    <div className="flex flex-col items-center gap-y-10 pt-10">
+    <div className="flex flex-col items-center gap-y-10 pt-10 mt-10!">
       <div className="flex items-end justify-center gap-1">
         <div className="h-7.5 w-12">
           <Image
@@ -41,7 +41,7 @@ const CustomPage = ({ onNext }: { onNext: () => void }) => {
 
       <div className="flex w-full px-6 gap-6 mt-2">
         <div
-          className="flex-1 flex flex-col items-center cursor-pointer group p-3! h-47 custom-page"
+          className="flex-1 flex flex-col items-center cursor-pointer group p-3! h-47 custom-page bg-[#FFFFFF]"
         >
           <div className="h-32">
             <Image
@@ -58,7 +58,7 @@ const CustomPage = ({ onNext }: { onNext: () => void }) => {
         </div>
 
         <div
-          className="flex-1 flex flex-col items-center cursor-pointer group p-3! h-47 custom-page"
+          className="flex-1 flex flex-col items-center cursor-pointer group p-3! h-47 custom-page bg-[#FFFFFF]"
         >
           <div className="h-32">
             <Image
@@ -74,7 +74,6 @@ const CustomPage = ({ onNext }: { onNext: () => void }) => {
           </Button>
         </div>
       </div>
-
     </div>
   );
 };

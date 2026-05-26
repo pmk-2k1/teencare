@@ -33,8 +33,6 @@ export default function OptionCardWithLabel({
 }: Props) {
   const btnStyle: React.CSSProperties = {
     paddingLeft: 60,
-    background: selected ? "transparent" : undefined,
-    borderColor: selected ? "#FFAC08" : "#E4E4E7",
   };
 
   return (
@@ -51,7 +49,7 @@ export default function OptionCardWithLabel({
 
       <button
         type="button"
-        className={`option-button ${selected ? "selected" : ""} w-full text-left`}
+        className={`option-button ${selected ? "selected bg-[#FFF7E8]! border-[#FFAC08]!" : ""} hover:bg-[#FFF7E8] hover:border-[#FFAC08] transition-colors w-full text-left`}
         onClick={onClick}
         style={btnStyle}
       >

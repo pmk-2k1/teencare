@@ -19,7 +19,7 @@ export default function OptionCard({
 }: OptionCardProps) {
   return (
     <button
-      className={`option-card ${selected ? "selected" : ""}`}
+      className={`option-card ${selected ? "selected bg-[#FFF7E8]! border-[#FFAC08]!" : ""} hover:bg-[#FFF7E8] hover:border-[#FFAC08] transition-colors`}
       onClick={onClick}
       style={{ animationDelay: `${animationDelay}s` }}
     >

@@ -8,13 +8,20 @@ const CustomPage20 = ({ onNext }: { onNext: () => void }) => {
 
   return (
     <div className="flex flex-col items-center justify-between pt-10! min-h-full! flex-1">
-      <Image
-        src="/images/step20-image.png"
-        alt="Survey Image"
-        width={500}
-        height={500}
-        className="w-full h-auto object-contain animate-bounce-in"
-      />
+      <div className="flex flex-col gap-7 justify-center justify-center">
+        <div className="px-3! flex justify-center items-center">
+          <Image
+            src="/images/step20Image.png"
+            alt="Survey Image"
+            width={500}
+            height={500}
+            className="w-full h-auto object-contain animate-bounce-in" />
+        </div>
+        <div className="flex flex-col gap-2 justify-center items-center">
+          <p className="text-[#18181B] text-[32px] font-semibold text-center">Words become walls</p>
+          <p className="text-[#18181B] text-[16px] text-center">How you talk to your kids becomes the voice inside their head.</p>
+        </div>
+      </div>
 
       <Button
         variant="outline"
