@@ -43,13 +43,15 @@ const CustomPage36 = ({ onNext }: { onNext: () => void }) => {
           </Button>
         </div>
         <div className="w-full flex justify-between items-center flex-wrap text-center">
-          <p className="underline text-[12px] text-[#6B6B6B]">
+          <a href="https://vn.teencare.co/dieukhoandichvu" target="_blank" className="underline text-[12px] text-[#6B6B6B]">
             Terms & Conditions
-          </p>
-          <p className="underline text-[12px] text-[#6B6B6B]">Privacy Policy</p>
-          <p className="underline text-[12px] text-[#6B6B6B]">
+          </a>
+          <a href="https://vn.teencare.co/dieukhoandichvu" target="_blank" className="underline text-[12px] text-[#6B6B6B]">
+            Privacy Policy
+          </a>
+          <a href="https://vn.teencare.co/dieukhoandichvu" target="_blank" className="underline text-[12px] text-[#6B6B6B]">
             Subscription Policy
-          </p>
+          </a>
         </div>
       </div>
     </div>

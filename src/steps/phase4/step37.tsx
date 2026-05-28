@@ -194,7 +194,7 @@ const CustomPage37 = ({ onNext }: { onNext: () => void }) => {
         variant="primary"
         onClick={onNext}
         id="btn-continue"
-        className="text-[#18181B] w-full"
+        className="text-[#18181B] w-full shrink-0"
       >
         {t("continue")}
       </Button>

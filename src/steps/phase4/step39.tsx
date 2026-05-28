@@ -558,10 +558,18 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
               governing your interaction with our platform
             </span>
             <div className="text-[#A1A1AA] flex flex-wrap gap-x-5 gap-y-2 items-center underline">
-              <span>Terms & Conditions</span>
-              <span>Privacy Policy</span>
-              <span>Subscription Policy</span>
-              <span>Contact Support</span>
+              <a href="https://vn.teencare.co/dieukhoandichvu" target="_blank" className="underline text-[12px] text-[#6B6B6B]">
+                Terms & Conditions
+              </a>
+              <a href="https://vn.teencare.co/dieukhoandichvu" target="_blank" className="underline text-[12px] text-[#6B6B6B]">
+                Privacy Policy
+              </a>
+              <a href="https://vn.teencare.co/dieukhoandichvu" target="_blank" className="underline text-[12px] text-[#6B6B6B]">
+                Subscription Policy
+              </a>
+              <a href="https://vn.teencare.co/dieukhoandichvu" target="_blank" className="underline text-[12px] text-[#6B6B6B]">
+                Contact Support
+              </a>
             </div>
           </div>
         </div>
