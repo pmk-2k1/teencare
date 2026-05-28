@@ -7,14 +7,23 @@ const CustomPage7 = ({ onNext }: { onNext: () => void }) => {
   const { t } = useI18n();
 
   return (
-    <div className="flex flex-col items-center justify-between pt-10! min-h-full! flex-1">
-      <Image
-        src="/images/step7-image.png"
-        alt="Survey Image"
-        width={500}
-        height={500}
-        className="w-full h-auto object-contain animate-bounce-in"
-      />
+    <div className="flex flex-col items-center justify-between pt-10! min-h-full! flex-1 gap-10">
+      <div className="flex flex-col gap-7 justify-center justify-center">
+        <div className="px-3! flex justify-center items-center">
+          <Image
+            src="/images/imageStep7.png"
+            alt="Survey Image"
+            width={500}
+            height={500}
+            className="w-full h-auto object-contain animate-bounce-in"
+            priority
+          />
+        </div>
+        <div className="flex flex-col gap-2 justify-center items-center">
+          <p className="text-[#18181B] text-[32px] font-semibold text-center">The setup is done.</p>
+          <p className="text-[#18181B] text-[16px] text-center">Now let’s get to the part that really matters - how you parent.</p>
+        </div>
+      </div>
 
       <Button
         variant="outline"

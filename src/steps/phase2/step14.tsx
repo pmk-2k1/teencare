@@ -164,7 +164,7 @@ const CustomPage14 = ({ onNext }: { onNext: () => void }) => {
   const { t } = useI18n();
 
   return (
-    <div className="flex flex-col items-center justify-between pt-10! min-h-full! flex-1 mt-10!">
+    <div className="flex flex-col items-center justify-between pt-10! min-h-full! flex-1 mt-10! gap-10">
       <div className="flex flex-col justify-center items-center w-full">
         <div className="flex flex-col gap-2 mb-5!">
           <p className="text-[#18181B] text-[24px] font-semibold text-center">Reading gives you knowledge.</p>

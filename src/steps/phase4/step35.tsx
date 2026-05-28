@@ -8,6 +8,7 @@ import TextInput from "@/src/component/TextInput";
 import ErrorCircle from "@/src/app/assets/svg/ErrorCircle";
 import Button from "@/src/component/Button";
 import Arrow from "@/src/app/assets/svg/Arrow";
+import Logo from "@/src/app/assets/svg/Logo";
 
 function CustomPage35({ onNext }: { onNext: () => void }) {
   const [step, setStep] = useState(0);
@@ -73,14 +74,8 @@ function CustomPage35({ onNext }: { onNext: () => void }) {
           <div className="flex flex-col justify-center gap-y-8 w-full">
             <div className="flex flex-col gap-5 justify-center">
               <div className="flex items-end justify-center gap-1">
-                <div className="h-7.5 w-12">
-                  <Image
-                    src="/images/logo.png"
-                    alt="TeenCare"
-                    width={48}
-                    height={30}
-                    className="h-full w-full"
-                  />
+                <div className="flex mb-0.5!">
+                  <Logo />
                 </div>
 
                 <p className="text-[24px] font-bold text-[#292929] leading-none">
@@ -198,7 +193,7 @@ function CustomPage35({ onNext }: { onNext: () => void }) {
             exit={{ x: "-100%", opacity: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="flex flex-col justify-between min-h-0 flex-1">
+            <div className="flex flex-col justify-between min-h-0 flex-1 gap-10">
               <div className="flex flex-col gap-5">
                 <div className="flex flex-col gap-1">
                   <p className="text-[24px] font-semibold text-[#18181B]">
@@ -238,15 +233,15 @@ function CustomPage35({ onNext }: { onNext: () => void }) {
                 <div className="flex flex-col gap-2 text-[12px] text-[#6B6B6B] font-medium justify-center text-center">
                   <p>By continuing you agree with</p>
                   <div className="w-full flex justify-between items-center flex-wrap text-center">
-                    <p className="underline text-[12px] text-[#6B6B6B]">
+                    <a href="https://vn.teencare.co/dieukhoandichvu" target="_blank" className="underline text-[12px] text-[#6B6B6B]">
                       Terms & Conditions
-                    </p>
-                    <p className="underline text-[12px] text-[#6B6B6B]">
+                    </a>
+                    <a href="https://vn.teencare.co/dieukhoandichvu" target="_blank" className="underline text-[12px] text-[#6B6B6B]">
                       Privacy Policy
-                    </p>
-                    <p className="underline text-[12px] text-[#6B6B6B]">
+                    </a>
+                    <a href="https://vn.teencare.co/dieukhoandichvu" target="_blank" className="underline text-[12px] text-[#6B6B6B]">
                       Subscription Policy
-                    </p>
+                    </a>
                   </div>
                 </div>
               </div>

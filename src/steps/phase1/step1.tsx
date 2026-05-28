@@ -4,6 +4,7 @@ import TimeIcon from "@/src/app/assets/svg/Time";
 import Button from "@/src/component/Button";
 import Arrow from "@/src/app/assets/svg/Arrow";
 import { useI18n } from "@/src/i18n/context";
+import Logo from "@/src/app/assets/svg/Logo";
 
 const CustomPage = ({ onNext }: { onNext: () => void }) => {
   const { t } = useI18n();
@@ -11,14 +12,8 @@ const CustomPage = ({ onNext }: { onNext: () => void }) => {
   return (
     <div className="flex flex-col items-center gap-y-10 pt-10 mt-10!">
       <div className="flex items-end justify-center gap-1">
-        <div className="h-7.5 w-12">
-          <Image
-            src="/images/logo.png"
-            alt="TeenCare"
-            width={48}
-            height={30}
-            className="h-full w-full"
-          />
+        <div className="flex mb-0.5!">
+          <Logo />
         </div>
 
         <p className="text-[24px] font-bold text-[#292929] leading-none">
@@ -43,13 +38,14 @@ const CustomPage = ({ onNext }: { onNext: () => void }) => {
         <div
           className="flex-1 flex flex-col items-center cursor-pointer group p-3! h-47 custom-page bg-[#FFFFFF]"
         >
-          <div className="h-32">
+          <div className="h-32 pointer-events-none">
             <Image
-              src="/images/dad.png"
+              src="/images/step1Dad.png"
               alt="Dad"
               width={150}
               height={136}
               className="h-full w-full"
+              priority
             />
           </div>
           <Button variant="primary" onClick={onNext} id="btn-dad" className="text-[#18181B] w-full" size="sm" iconRight={<Arrow />}>
@@ -60,13 +56,14 @@ const CustomPage = ({ onNext }: { onNext: () => void }) => {
         <div
           className="flex-1 flex flex-col items-center cursor-pointer group p-3! h-47 custom-page bg-[#FFFFFF]"
         >
-          <div className="h-32">
+          <div className="h-32 pointer-events-none">
             <Image
-              src="/images/mom.png"
+              src="/images/step1Mom.png"
               alt="Mom"
               width={150}
               height={136}
               className="h-full w-full"
+              priority
             />
           </div>
           <Button variant="primary" onClick={onNext} id="btn-mom" className="text-[#18181B] w-full" size="sm" iconRight={<Arrow />}>

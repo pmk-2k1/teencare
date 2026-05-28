@@ -8,6 +8,7 @@ import Image from "next/image";
 import Apple from "@/src/app/assets/svg/Apple";
 import GooglePlay from "@/src/app/assets/svg/GooglePlay";
 import ArrowDown from "@/src/app/assets/svg/ArrowDown";
+import Logo from "@/src/app/assets/svg/Logo";
 
 const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
@@ -17,7 +18,7 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
   const [selectedPayment, setSelectedPayment] = useState<string | null>(null);
 
   return (
-    <div className="flex flex-col justify-center pt-10! min-h-full! flex-1 gap-5">
+    <div className="flex flex-col justify-start pt-10! min-h-full! flex-1 gap-5">
       {/* slide 1 */}
       <div className="flex flex-col justify-center items-center gap-5 w-full">
         <p className="font-bold text-[32px] text-[#18181B]">Choose your plan</p>
@@ -253,6 +254,7 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
             width={500}
             height={500}
             className="w-full h-auto object-contain animate-bounce-in"
+            priority
           />
         </div>
       </div>
@@ -267,6 +269,7 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
               width={38}
               height={80}
               className="w-full h-full object-cover"
+              priority
             />
           </div>
           <div className="flex flex-col justify-center items-center text-[#18181B]">
@@ -282,6 +285,7 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
               width={38}
               height={80}
               className="w-full h-full object-cover"
+              priority
             />
           </div>
         </div>
@@ -435,6 +439,7 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
                       width={42}
                       height={24}
                       className="w-full h-full object-cover"
+                      priority
                     />
                   </div>
                 }
@@ -453,6 +458,7 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
                       width={52}
                       height={20}
                       className="w-full h-full object-cover"
+                      priority
                     />
                   </div>
                 }
@@ -471,6 +477,7 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
                       width={210}
                       height={20}
                       className="w-full h-full object-cover"
+                      priority
                     />
                   </div>
                 }
@@ -505,6 +512,7 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
               width={328}
               height={22}
               className="w-full h-full object-cover"
+              priority
             />
           </div>
         </div>
@@ -524,22 +532,15 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
 
       {/* slide 10 */}
       <div className="flex flex-col gap-y-5">
-        <div className="flex items-end text-start gap-1">
-          <div className="h-7.5 w-12">
-            <Image
-              src="/images/logo.png"
-              alt="TeenCare"
-              width={48}
-              height={30}
-              className="h-full w-full"
-            />
+        <div className="flex items-end justify-center gap-1">
+          <div className="flex mb-0.5!">
+            <Logo />
           </div>
 
           <p className="text-[24px] font-bold text-[#292929] leading-none">
             TeenCare
           </p>
         </div>
-
         <div className="flex flex-col justify-center gap-5 text-[#18181B] text-[12px] font-medium">
           <span>© 2026 by TeenCare</span>
           <div className="flex flex-col gap-3 justify-center">

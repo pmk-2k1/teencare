@@ -7,7 +7,7 @@ const CustomPage2 = ({ onNext }: { onNext: () => void }) => {
   const { t } = useI18n();
 
   return (
-    <div className="flex flex-col items-center justify-between pt-10! min-h-full! flex-1 mt-10!" >
+    <div className="flex flex-col items-center justify-between pt-10! min-h-full! flex-1 mt-10! gap-10" >
       <div className="w-full flex flex-col gap-7 justify-center">
         <div className="flex flex-col gap-1 justtify-center px-15! items-center">
           <p className="text-[32px] font-bold text-[#FFAC08] text-center leading-[1.3]">28,400+</p>
@@ -19,13 +19,14 @@ const CustomPage2 = ({ onNext }: { onNext: () => void }) => {
         </div>
         <div className="w-full flex flex-col justify-center items-center gap-5">
           <p className="text-[16px] text-[#18181B] text-center">Featured in:</p>
-          <div className="w-[300px] h-[120px]">
+          <div className="w-[330px] h-[120px]">
             <Image
-              src="/images/step2Image.png"
+              src="/images/step2.png"
               alt="Survey Image"
-              width={280}
-              height={115}
-              className="w-full h-auto object-contain animate-bounce-in" />
+              width={330}
+              height={120}
+              className="w-full h-auto object-contain animate-bounce-in"
+              priority />
           </div>
         </div>
       </div>

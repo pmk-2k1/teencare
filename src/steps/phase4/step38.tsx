@@ -9,7 +9,7 @@ const CustomPage38 = ({ onNext }: { onNext: () => void }) => {
   const { t } = useI18n();
 
   return (
-    <div className="flex flex-col items-center justify-between pt-10! min-h-full! flex-1">
+    <div className="flex flex-col items-center justify-between pt-10! min-h-full! flex-1 gap-10">
       <div className="flex flex-col gap-10">
         <div className="flex flex-col gap-1">
           <p className="text-[24px] font-semibold text-[#18181B]">
@@ -68,7 +68,7 @@ const CustomPage38 = ({ onNext }: { onNext: () => void }) => {
         </div>
         <div className="flex gap-2 justify-center items-center">
           <div className="h-5 w-5">
-            <Shield className="text-[#22C55E]"/>
+            <Shield className="text-[#22C55E]" />
           </div>
           <p className="font-medium text-[12px] text-[#18181B]">
             84% of parents felt more confident in hard conversations after 10

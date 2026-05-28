@@ -2,22 +2,17 @@ import type { SurveyStep } from "@/src/types/survey";
 import Image from "next/image";
 import Button from "@/src/component/Button";
 import { useI18n } from "@/src/i18n/context";
+import Logo from "@/src/app/assets/svg/Logo";
 
 const CustomPage36 = ({ onNext }: { onNext: () => void }) => {
   const { t } = useI18n();
 
   return (
-    <div className="flex flex-col items-center justify-between pt-10! min-h-full! flex-1">
+    <div className="flex flex-col items-center justify-between pt-10! min-h-full! flex-1 gap-10">
       <div className="flex flex-col gap-10 justify-center">
         <div className="flex items-end justify-center gap-1">
-          <div className="h-7.5 w-12">
-            <Image
-              src="/images/logo.png"
-              alt="TeenCare"
-              width={48}
-              height={30}
-              className="h-full w-full"
-            />
+          <div className="flex mb-0.5!">
+            <Logo />
           </div>
 
           <p className="text-[24px] font-bold text-[#292929] leading-none">

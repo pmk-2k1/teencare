@@ -153,7 +153,7 @@ const CustomPage37 = ({ onNext }: { onNext: () => void }) => {
   const { t } = useI18n();
 
   return (
-    <div className="flex flex-col items-center justify-between pt-10! min-h-full! flex-1">
+    <div className="flex flex-col items-center justify-between pt-10! min-h-full! flex-1 gap-10">
       <div className="flex flex-col gap-5">
         <div className="flex flex-col gap-1">
           <p className="text-[24px] font-semibold text-[#18181B]">

@@ -145,22 +145,6 @@ export default function SurveyPage() {
     [currentStep]
   );
 
-  // const handleRestart = useCallback(() => {
-  //   setIsAnimating(true);
-  //   setTimeout(() => {
-  //     setCurrentStep(0);
-  //     setAnswers({});
-  //     setIsCompleted(false);
-  //     setDirection("forward");
-  //     setIsAnimating(false);
-  //     try {
-  //       localStorage.removeItem(ANSWERS_STORAGE_KEY);
-  //     } catch {
-  //       // Ignore
-  //     }
-  //   }, 300);
-  // }, []);
-
   const selectedOptions = answers[currentStep] || [];
   const canConfirm =
     currentQuestion?.type === "multiple" && selectedOptions.length > 0;
@@ -176,16 +160,6 @@ export default function SurveyPage() {
   };
 
   if (!mounted) return null; // Avoid hydration mismatch
-
-  // if (isCompleted) {
-  //   return (
-  //     <div className="survey-container">
-  //       <CompletionScreen onNext={handleRestart} />
-  //       {showConfetti && <ConfettiEffect />}
-  //     </div>
-  //   );
-  // }
-
   if (!currentQuestion) return null;
 
   // options container classes and style (support configurable grid columns)
@@ -206,7 +180,7 @@ export default function SurveyPage() {
             total={totalSteps}
             onBack={goToPrev}
             canGoBack={currentStep > 0}
-          />    
+          />
           <ProgressBar percent={progressPercent} />
         </>
       )}
@@ -230,6 +204,7 @@ export default function SurveyPage() {
                 width={280}
                 height={currentQuestion.heightImage ?? 360}
                 className="w-auto h-full object-cover"
+                priority
               />
             </div>}
 
@@ -257,7 +232,7 @@ export default function SurveyPage() {
               })}
             </div>
             {currentQuestion.type === "multiple" && (
-              <div style={{ marginTop: "16px" }}>
+              <div style={{ marginTop: "40px" }}>
                 <Button
                   variant="primary"
                   fullWidth

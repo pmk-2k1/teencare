@@ -7,21 +7,24 @@ const CustomPage34 = ({ onNext }: { onNext: () => void }) => {
   const { t } = useI18n();
 
   return (
-    <div className="flex flex-col items-center justify-between pt-10! min-h-full! flex-1">
+    <div className="flex flex-col items-center justify-between pt-10! min-h-full! flex-1 gap-10">
       <div className="flex flex-col gap-7 justify-center justify-center">
         <div className="px-3! flex justify-center items-center">
           <Image
-            src="/images/step34Image.png"
+            src="/images/step34.png"
             alt="Survey Image"
             width={500}
             height={500}
-            className="w-full h-auto object-contain animate-bounce-in" />
+            className="w-full h-auto object-contain animate-bounce-in"
+            priority
+          />
         </div>
         <div className="flex flex-col gap-2 justify-center items-center">
           <p className="text-[#18181B] text-[32px] font-semibold text-center">Most parents never finish this</p>
           <p className="text-[#18181B] text-[16px] text-center">They got pulled away to investigate a suspiciously loud silence from the next room. You stayed. That says everything.</p>
         </div>
       </div>
+
       <Button
         variant="outline"
         onClick={onNext}

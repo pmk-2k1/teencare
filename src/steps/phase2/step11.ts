@@ -5,7 +5,7 @@ const step11: SurveyStep = {
   questionKey: "step11.question",
   type: "single",
   optionLayout: "grid",
-  image: "/images/step11-image.png",
+  image: "/images/step11.png",
   heightImage: 360,
   options: [
     { id: "no", labelKey: "no", emoji: "👎" },
