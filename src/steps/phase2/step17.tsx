@@ -9,13 +9,15 @@ const CustomPage17 = ({ onNext }: { onNext: () => void }) => {
   return (
     <div className="flex flex-col items-center justify-between pt-10! min-h-full! flex-1 gap-10">
       <div className="flex flex-col gap-7 justify-center justify-center">
-        <div className="px-3! flex justify-center items-center">
+        <div className="px-3! flex justify-center items-center w-full max-w-[500px]">
           <Image
             src="/images/step17.png"
             alt="Survey Image"
             width={500}
             height={500}
-            className="w-full h-auto object-contain animate-bounce-in"
+            className="object-contain animate-bounce-in"
+            style={{ width: "100%", height: "auto" }}
+            unoptimized
             priority
           />
         </div>

@@ -248,27 +248,31 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
           <span className="text-[14px] font-medium text-[#18181B] text-center">
             Featured in:
           </span>
-          <Image
-            src="/images/partner.png"
-            alt="Survey Image"
-            width={500}
-            height={500}
-            className="w-full h-auto object-contain animate-bounce-in"
-            priority
-          />
+          <div className="flex justify-center items-center w-full max-w-[500px]">
+            <Image
+              src="/images/partner.png"
+              alt="Survey Image"
+              width={500}
+              height={500}
+              className="object-contain animate-bounce-in"
+              style={{ width: "100%", height: "auto" }}
+              unoptimized
+              priority
+            />
+          </div>
         </div>
       </div>
 
       {/* slide 5 */}
       <div className="flex flex-col bg-[#FFFFFF] rounded-sm p-5! gap-y-5 justify-center items-center">
         <div className="flex justify-center items-center gap-1 w-[80%]">
-          <div className="h-20! w-10!">
+          <div className="relative h-20! w-10!">
             <Image
               src="/images/wreath-left.png"
               alt="Survey Image"
-              width={38}
-              height={80}
-              className="w-full h-full object-cover"
+              fill
+              sizes="40px"
+              className="object-cover"
               priority
             />
           </div>
@@ -278,13 +282,13 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
               users started improving their lives with us
             </span>
           </div>
-          <div className="h-20! w-10!">
+          <div className="relative h-20! w-10!">
             <Image
               src="/images/wreath-right.png"
               alt="Survey Image"
-              width={38}
-              height={80}
-              className="w-full h-full object-cover"
+              fill
+              sizes="40px"
+              className="object-cover"
               priority
             />
           </div>
@@ -432,13 +436,14 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
               <OptionCardWithLabel
                 discount="Google Pay"
                 image={
-                  <div className="h-6! w-10.5!">
+                  <div className="relative h-6! w-10.5!">
                     <Image
                       src="/images/google-pay.png"
                       alt="Survey Image"
-                      width={42}
-                      height={24}
-                      className="w-full h-full object-cover"
+                      fill
+                      sizes="42px"
+                      className="object-cover"
+                      unoptimized
                       priority
                     />
                   </div>
@@ -451,13 +456,14 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
               <OptionCardWithLabel
                 discount="PayPal"
                 image={
-                  <div className="h-5! w-13!">
+                  <div className="relative h-5! w-13!">
                     <Image
                       src="/images/paypal-pay.png"
                       alt="Survey Image"
-                      width={52}
-                      height={20}
-                      className="w-full h-full object-cover"
+                      fill
+                      sizes="52px"
+                      className="object-cover"
+                      unoptimized
                       priority
                     />
                   </div>
@@ -470,13 +476,14 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
               <OptionCardWithLabel
                 discount="Credit Card"
                 image={
-                  <div className="h-5! w-52.5!">
+                  <div className="relative h-5! w-52.5!">
                     <Image
                       src="/images/card-pay.png"
                       alt="Survey Image"
-                      width={210}
-                      height={20}
-                      className="w-full h-full object-cover"
+                      fill
+                      sizes="210px"
+                      className="object-cover"
+                      unoptimized
                       priority
                     />
                   </div>
@@ -505,13 +512,14 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
               30-DAY MONEY-BACK GUARANTEE
             </p>
           </div>
-          <div className="h-5.5! w-82!">
+          <div className="relative h-5.5! w-82!">
             <Image
               src="/images/pays.png"
               alt="Survey Image"
-              width={328}
-              height={22}
-              className="w-full h-full object-cover"
+              fill
+              sizes="328px"
+              className="object-cover"
+              unoptimized
               priority
             />
           </div>

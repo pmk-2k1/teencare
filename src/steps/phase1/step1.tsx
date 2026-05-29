@@ -38,13 +38,13 @@ const CustomPage = ({ onNext }: { onNext: () => void }) => {
         <div
           className="flex-1 flex flex-col items-center cursor-pointer group p-3! h-47 custom-page bg-[#FFFFFF]"
         >
-          <div className="h-32 pointer-events-none">
+          <div className="relative h-32 w-full pointer-events-none">
             <Image
               src="/images/step1Dad.png"
               alt="Dad"
-              width={150}
-              height={136}
-              className="h-full w-full"
+              fill
+              className="object-contain"
+              unoptimized
               priority
             />
           </div>
@@ -56,13 +56,13 @@ const CustomPage = ({ onNext }: { onNext: () => void }) => {
         <div
           className="flex-1 flex flex-col items-center cursor-pointer group p-3! h-47 custom-page bg-[#FFFFFF]"
         >
-          <div className="h-32 pointer-events-none">
+          <div className="relative h-32 w-full pointer-events-none">
             <Image
               src="/images/step1Mom.png"
               alt="Mom"
-              width={150}
-              height={136}
-              className="h-full w-full"
+              fill
+              className="object-contain"
+              unoptimized
               priority
             />
           </div>
