@@ -96,6 +96,9 @@ export default function SurveyPage() {
       "/images/step2.png",
       "/images/step3.png",
       "/images/imageStep7.png",
+      "/images/step11.png",
+      "/images/step12-image.png",
+      "/images/step13-image.png",
       "/images/step17.png",
       "/images/step20.png",
       "/images/step23.png",
@@ -109,7 +112,6 @@ export default function SurveyPage() {
       "/images/paypal-pay.png",
       "/images/card-pay.png",
       "/images/pays.png",
-      "/images/survey_complete.png"
     ];
 
     imagesToPreload.forEach((src) => {
