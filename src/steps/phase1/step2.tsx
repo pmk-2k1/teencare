@@ -19,13 +19,14 @@ const CustomPage2 = ({ onNext }: { onNext: () => void }) => {
         </div>
         <div className="w-full flex flex-col justify-center items-center gap-5">
           <p className="text-[16px] text-[#18181B] text-center">Featured in:</p>
-          <div className="w-[330px] h-[120px]">
+          <div className="relative w-[330px] h-[120px]">
             <Image
               src="/images/step2.png"
               alt="Survey Image"
-              width={330}
-              height={120}
-              className="w-full h-auto object-contain animate-bounce-in"
+              fill
+              sizes="330px"
+              className="object-contain animate-bounce-in"
+              unoptimized
               priority />
           </div>
         </div>

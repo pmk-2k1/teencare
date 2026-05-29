@@ -203,7 +203,9 @@ export default function SurveyPage() {
                 alt={t(currentQuestion.questionKey ?? "")}
                 width={280}
                 height={currentQuestion.heightImage ?? 360}
-                className="w-auto h-full object-cover"
+                className="object-cover"
+                style={{ width: "auto", height: "100%" }}
+                unoptimized
                 priority
               />
             </div>}

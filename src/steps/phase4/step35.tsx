@@ -168,18 +168,53 @@ function CustomPage35({ onNext }: { onNext: () => void }) {
               </div>
               <div className="h-px bg-[#E4E4E7] flex-1" />
             </div>
-            <div className="feed-back flex flex-col gap-y-5">
-              <div className="flex justify-between items-center">
-                <div className="flex gap-1">
-                  <Star />
-                  <Star />
-                  <Star />
-                  <Star />
-                  <Star />
+
+            <div className="flex flex-col gap-y-5 justify-center w-full">
+              <div className="feed-back flex flex-col gap-y-5">
+                <div className="flex justify-between items-center">
+                  <div className="flex gap-1">
+                    <Star />
+                    <Star />
+                    <Star />
+                    <Star />
+                    <Star />
+                  </div>
+                  <p>@marcus</p>
                 </div>
-                <p>@mirraonair</p>
+                <p>
+                  Not gonna lie, by week 2 I had pretty much stopped yelling, and my
+                  son actually started talking to me insted of shutting down.
+                </p>
               </div>
-              <p>I finally feel like I know that what I’m doing</p>
+              <div className="feed-back flex flex-col gap-y-5">
+                <div className="flex justify-between items-center">
+                  <div className="flex gap-1">
+                    <Star />
+                    <Star />
+                    <Star />
+                    <Star />
+                    <Star />
+                  </div>
+                  <p>@priya</p>
+                </div>
+                <p>
+                  The role-play practice helped me stay calm when everything was
+                  falling apart.
+                </p>
+              </div>
+              <div className="feed-back flex flex-col gap-y-5">
+                <div className="flex justify-between items-center">
+                  <div className="flex gap-1">
+                    <Star />
+                    <Star />
+                    <Star />
+                    <Star />
+                    <Star />
+                  </div>
+                  <p>@mirraonair</p>
+                </div>
+                <p>I finally feel like I know that what I’m doing</p>
+              </div>
             </div>
           </div>
         </>
