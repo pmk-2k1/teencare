@@ -1253,22 +1253,19 @@ body {
 
 /* Custom Scrollbar */
 .custom-scrollbar::-webkit-scrollbar {
-  width: 4px;
+  width: 6px;
 }
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: transparent;
+  background: #f4f4f5;
+  border-radius: 4px;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #E4E4E7;
+  background: #a1a1aa;
   border-radius: 4px;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #A1A1AA;
+  background: #71717a;
 }
 .custom-scrollbar::-webkit-scrollbar-button {
   display: none;
-}
-.custom-scrollbar {
-  scrollbar-width: thin;
-  scrollbar-color: #E4E4E7 transparent;
 }
