@@ -169,8 +169,8 @@ function CustomPage35({ onNext }: { onNext: () => void }) {
               <div className="h-px bg-[#E4E4E7] flex-1" />
             </div>
 
-            <div className="flex flex-col gap-y-5 justify-center w-full">
-              <div className="feed-back flex flex-col gap-y-5">
+            <div className="flex flex-col gap-y-5 w-full mt-8 max-h-[160px] overflow-y-auto pb-4 pr-1 custom-scrollbar">
+              <div className="feed-back flex flex-col gap-y-5 shrink-0">
                 <div className="flex justify-between items-center">
                   <div className="flex gap-1">
                     <Star />
@@ -186,7 +186,7 @@ function CustomPage35({ onNext }: { onNext: () => void }) {
                   son actually started talking to me insted of shutting down.
                 </p>
               </div>
-              <div className="feed-back flex flex-col gap-y-5">
+              <div className="feed-back flex flex-col gap-y-5 shrink-0">
                 <div className="flex justify-between items-center">
                   <div className="flex gap-1">
                     <Star />
@@ -202,7 +202,7 @@ function CustomPage35({ onNext }: { onNext: () => void }) {
                   falling apart.
                 </p>
               </div>
-              <div className="feed-back flex flex-col gap-y-5">
+              <div className="feed-back flex flex-col gap-y-5 shrink-0">
                 <div className="flex justify-between items-center">
                   <div className="flex gap-1">
                     <Star />
