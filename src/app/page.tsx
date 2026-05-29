@@ -88,6 +88,36 @@ export default function SurveyPage() {
     }
   }, [answers, mounted]);
 
+  // Preload all static images to ensure instant transitions between steps
+  useEffect(() => {
+    const imagesToPreload = [
+      "/images/step1Dad.png",
+      "/images/step1Mom.png",
+      "/images/step2.png",
+      "/images/step3.png",
+      "/images/imageStep7.png",
+      "/images/step17.png",
+      "/images/step20.png",
+      "/images/step23.png",
+      "/images/step26.png",
+      "/images/step31.png",
+      "/images/step34.png",
+      "/images/partner.png",
+      "/images/wreath-left.png",
+      "/images/wreath-right.png",
+      "/images/google-pay.png",
+      "/images/paypal-pay.png",
+      "/images/card-pay.png",
+      "/images/pays.png",
+      "/images/survey_complete.png"
+    ];
+
+    imagesToPreload.forEach((src) => {
+      const img = new window.Image();
+      img.src = src;
+    });
+  }, []);
+
   const goToNext = useCallback(() => {
     if (isAnimating) return;
     setIsAnimating(true);
