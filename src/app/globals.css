@@ -1250,3 +1250,25 @@ body {
 .step39-bg{
   background: var(--color-primary-50, #FFFAEF) !important;
 }
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #E4E4E7;
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #A1A1AA;
+}
+.custom-scrollbar::-webkit-scrollbar-button {
+  display: none;
+}
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #E4E4E7 transparent;
+}
