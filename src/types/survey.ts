@@ -14,7 +14,7 @@ export interface SurveyStep {
   optionLayout?: "list" | "grid";
   options?: SurveyOption[];
   showHeader?: boolean;
-  customPage?: React.ComponentType<{ onNext: () => void }>;
+  customPage?: React.ComponentType<{ onNext: () => void; onSkipTo?: (stepIndex: number) => void }>;
   wrapperClass?: string;
   gridColumns?: number;
   heightImage?: number;

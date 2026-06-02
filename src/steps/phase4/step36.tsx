@@ -4,7 +4,7 @@ import Button from "@/src/component/Button";
 import { useI18n } from "@/src/i18n/context";
 import Logo from "@/src/app/assets/svg/Logo";
 
-const CustomPage36 = ({ onNext }: { onNext: () => void }) => {
+const CustomPage36 = ({ onNext, onSkipTo }: { onNext: () => void; onSkipTo?: (stepIndex: number) => void }) => {
   const { t } = useI18n();
 
   return (
@@ -35,7 +35,7 @@ const CustomPage36 = ({ onNext }: { onNext: () => void }) => {
           </Button>
           <Button
             variant="outline"
-            onClick={onNext}
+            onClick={() => onSkipTo ? onSkipTo(38) : onNext()}
             id="btn-continue"
             className="text-[#18181B] w-full"
           >

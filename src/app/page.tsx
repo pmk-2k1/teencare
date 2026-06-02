@@ -148,6 +148,17 @@ export default function SurveyPage() {
     }, 350);
   }, [currentStep, isAnimating]);
 
+  const goToStep = useCallback((stepIndex: number) => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setDirection("forward");
+
+    setTimeout(() => {
+      setCurrentStep(stepIndex);
+      setIsAnimating(false);
+    }, 350);
+  }, [isAnimating]);
+
   const handleSingleSelect = useCallback(
     (optionId: string) => {
       if (isAnimating) return;
@@ -224,7 +235,7 @@ export default function SurveyPage() {
         {
           currentQuestion.customPage ? (() => {
             const CustomComponent = currentQuestion.customPage;
-            return <CustomComponent onNext={goToNext} />;
+            return <CustomComponent onNext={goToNext} onSkipTo={goToStep} />;
           })() : <>
             <h1 className="question-text">{t(currentQuestion.questionKey ?? "")}</h1>
             <p className="question-subtitle">{currentQuestion.subtitleKey ? t(currentQuestion.subtitleKey) : ""}</p>
