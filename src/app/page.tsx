@@ -188,6 +188,13 @@ export default function SurveyPage() {
     [currentStep]
   );
 
+  const handleSaveAnswer = useCallback(
+    (values: string[]) => {
+      setAnswers((prev) => ({ ...prev, [currentStep]: values }));
+    },
+    [currentStep],
+  );
+
   const selectedOptions = answers[currentStep] || [];
   const canConfirm =
     currentQuestion?.type === "multiple" && selectedOptions.length > 0;
@@ -235,7 +242,13 @@ export default function SurveyPage() {
         {
           currentQuestion.customPage ? (() => {
             const CustomComponent = currentQuestion.customPage;
-            return <CustomComponent onNext={goToNext} onSkipTo={goToStep} />;
+            return (
+              <CustomComponent
+                onNext={goToNext}
+                onSkipTo={goToStep}
+                onSaveAnswer={handleSaveAnswer}
+              />
+            );
           })() : <>
             <h1 className="question-text">{t(currentQuestion.questionKey ?? "")}</h1>
             <p className="question-subtitle">{currentQuestion.subtitleKey ? t(currentQuestion.subtitleKey) : ""}</p>

@@ -5,6 +5,8 @@ export interface SurveyOption {
   extra?: string;
 }
 
+import type { SurveyCustomPageProps } from "@/src/lib/survey/customPageTypes";
+
 export interface SurveyStep {
   id: number;
   questionKey?: string;
@@ -14,7 +16,7 @@ export interface SurveyStep {
   optionLayout?: "list" | "grid";
   options?: SurveyOption[];
   showHeader?: boolean;
-  customPage?: React.ComponentType<{ onNext: () => void; onSkipTo?: (stepIndex: number) => void }>;
+  customPage?: React.ComponentType<SurveyCustomPageProps>;
   wrapperClass?: string;
   gridColumns?: number;
   heightImage?: number;

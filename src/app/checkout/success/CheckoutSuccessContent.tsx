@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Button from "@/src/component/Button";
 import TextInput from "@/src/component/TextInput";
+import { applySheetAnswersToPayload } from "@/src/lib/survey/buildSheetPayload";
 import { PENDING_SURVEY_STORAGE_KEY } from "@/src/lib/survey/storageKeys";
 import {
   formatUsPhoneDisplay,
@@ -153,6 +154,8 @@ export default function CheckoutSuccessContent() {
       } catch {
         // keep minimal payload
       }
+
+      payload = applySheetAnswersToPayload(payload);
 
       const submitRes = await fetch("/api/survey-submit", {
         method: "POST",
