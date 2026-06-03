@@ -60,8 +60,7 @@ export default function SurveyPage() {
     } catch {
       // Ignore errors parsing local storage
     } finally {
-      // ensure we mark mounted after attempting to load
-      // defer to next tick to avoid sync state updates
+
       if (!timer) {
         timer = window.setTimeout(() => setMounted(true), 0);
       } else {
@@ -88,7 +87,6 @@ export default function SurveyPage() {
     }
   }, [answers, mounted]);
 
-  // Preload all static images to ensure instant transitions between steps
   useEffect(() => {
     const imagesToPreload = [
       "/images/step1Dad.png",

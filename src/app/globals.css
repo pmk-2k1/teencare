@@ -647,10 +647,6 @@ body {
   transform: translateX(4px);
 }
 
-/* ============================
-   Completion Screen
-   ============================ */
-
 .completion-screen {
   flex: 1;
   display: flex;
@@ -726,10 +722,6 @@ body {
   transform: scale(0.96);
 }
 
-/* ============================
-   Confetti Particles
-   ============================ */
-
 .confetti-container {
   position: fixed;
   top: 0;
@@ -748,10 +740,6 @@ body {
   border-radius: 2px;
   animation: confetti 1.5s ease-out forwards;
 }
-
-/* ============================
-   Responsive
-   ============================ */
 
 @media (min-width: 640px) {
   body {
