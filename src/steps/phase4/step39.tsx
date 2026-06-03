@@ -18,14 +18,9 @@ import {
 } from "@/src/lib/survey/storageKeys";
 
 type StoredAnswers = Record<string, string[]>;
-type PlanSection = "primary" | "secondary";
 
 const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
-  const [selectedPlanSecond, setSelectedPlanSecond] = useState<string | null>(
-    null,
-  );
-  const [selectedPayment, setSelectedPayment] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
 
@@ -53,7 +48,6 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
 
   const buildSurveyPayload = (
     planId: PlanId,
-    planSection: PlanSection,
     email: string,
     sessionId: string,
   ) => {
@@ -66,20 +60,17 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
       session_id: sessionId,
       payment_paid: "no",
       payment_status: "pending",
-      plan_step1: planSection === "primary" ? planId : selectedPlan,
-      plan_step2: planSection === "secondary" ? planId : selectedPlanSecond,
-      payment_method: selectedPayment,
+      plan_step1: planId,
       step_answers: stepAnswers,
       user_agent: navigator.userAgent,
     };
   };
 
-  const handleGetPlan = async (planSection: PlanSection) => {
+  const handleGetPlan = async () => {
     if (isSubmitting) return;
     setSubmitError(null);
 
-    const planId =
-      planSection === "primary" ? selectedPlan : selectedPlanSecond;
+    const planId = selectedPlan;
 
     if (!planId || (planId !== "week" && planId !== "month" && planId !== "quarterly")) {
       setSubmitError("Please select a plan before continuing.");
@@ -105,7 +96,6 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
 
       const payload = buildSurveyPayload(
         planId as PlanId,
-        planSection,
         email,
         sessionId,
       );
@@ -254,7 +244,7 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
           </div>
           <Button
             variant="primary"
-            onClick={() => void handleGetPlan("primary")}
+            onClick={() => void handleGetPlan()}
             id="btn-continue"
             className="text-[#18181B] w-full"
             disabled={isSubmitting}
@@ -509,167 +499,6 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
           <div className="flex justify-between items-center bg-[#FFE5B2] py-3! px-5! rounded-sm text-[16px] text-[#18181B] font-medium cursor-pointer">
             <span>How do I get access to the app?</span>
             <ArrowDown />
-          </div>
-        </div>
-      </div>
-
-      {/* slide 7 */}
-      <div className="flex flex-col justify-center items-center gap-5 w-full bg-[#FFFFFF] rounded-sm px-3! py-5!">
-        <p className="font-bold text-[32px] text-[#18181B]">Choose your plan</p>
-        <div className=" flex flex-col gap-5 items-center justify-center w-full">
-          <div className="flex flex-col gap-5 w-full">
-            <div className="flex flex-col gap-5 w-full">
-              <OptionCardWithLabel
-                topLabel="Intro Offer"
-                title="1 week"
-                discount="USD 4.99"
-                price="USD 29.99"
-                per_day={71}
-                explain={0}
-                selected={selectedPlanSecond === "week"}
-                selectionType="single"
-                onClick={() => setSelectedPlanSecond("week")}
-              />
-              <OptionCardWithLabel
-                topLabel="Save 15%"
-                title="1 month"
-                discount="USD 17.99"
-                price="USD 29.99"
-                per_day={60}
-                explain={0}
-                selected={selectedPlanSecond === "month"}
-                selectionType="single"
-                onClick={() => setSelectedPlanSecond("month")}
-              />
-              <OptionCardWithLabel
-                topLabel="Save 53%"
-                title="3 months"
-                discount="USD 29.99"
-                price="USD 59.99"
-                per_day={33}
-                explain={0}
-                selected={selectedPlanSecond === "quarterly"}
-                selectionType="single"
-                onClick={() => setSelectedPlanSecond("quarterly")}
-              />
-            </div>
-          </div>
-          <div className="text-center flex gap-2 justify-center items-center">
-            <Shield className="text-[#FFAC08]" />
-            <p className="text-[#18181B] font-medium text-[12px] underline">
-              30-DAY MONEY-BACK GUARANTEE
-            </p>
-          </div>
-          <Button
-            variant="primary"
-            onClick={() => void handleGetPlan("secondary")}
-            id="btn-continue-secondary"
-            className="text-[#18181B] w-full"
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? "Redirecting to payment..." : "Get my plan"}
-          </Button>
-        </div>
-      </div>
-
-      {/* slide 8 */}
-      <div className="flex flex-col justify-center gap-5 w-full bg-[#FFFFFF] rounded-sm px-3! py-5!">
-        <p className="font-bold text-[18px] text-[#18181B] pb-5! border-b border-[#E4E4E7]">
-          Payment method
-        </p>
-
-        <div className="flex flex-col gap-5 items-center justify-center w-full">
-          <div className="flex flex-col gap-5 w-full">
-            <div className="flex flex-col gap-5 w-full">
-              <OptionCardWithLabel
-                discount="Google Pay"
-                image={
-                  <div className="relative h-6! w-10.5!">
-                    <Image
-                      src="/images/google-pay.png"
-                      alt="Survey Image"
-                      fill
-                      sizes="42px"
-                      className="object-cover"
-                      unoptimized
-                      priority
-                    />
-                  </div>
-                }
-                check_price={false}
-                selected={selectedPayment === "google"}
-                selectionType="single"
-                onClick={() => setSelectedPayment("google")}
-              />
-              <OptionCardWithLabel
-                discount="PayPal"
-                image={
-                  <div className="relative h-5! w-13!">
-                    <Image
-                      src="/images/paypal-pay.png"
-                      alt="Survey Image"
-                      fill
-                      sizes="52px"
-                      className="object-cover"
-                      unoptimized
-                      priority
-                    />
-                  </div>
-                }
-                check_price={false}
-                selected={selectedPayment === "paypal"}
-                selectionType="single"
-                onClick={() => setSelectedPayment("paypal")}
-              />
-              <OptionCardWithLabel
-                discount="Credit Card"
-                image={
-                  <div className="relative h-5! w-52.5!">
-                    <Image
-                      src="/images/card-pay.png"
-                      alt="Survey Image"
-                      fill
-                      sizes="210px"
-                      className="object-cover"
-                      unoptimized
-                      priority
-                    />
-                  </div>
-                }
-                check_price={false}
-                selected={selectedPayment === "credit"}
-                selectionType="single"
-                onClick={() => setSelectedPayment("credit")}
-              />
-            </div>
-          </div>
-          <div className="text-[#52525B] text-[14px] font-medium">
-            <span>
-              Your 3 month plan now includes a discounted intro price. After the
-              3 month intro period ends, your subscription will renew at the
-              standard price of $59.99 every 3 months and will continue to bill
-              every 3 months until you cancel. You can cancel anytime in your
-              account at vocalimage.app, in the app settings, or by contacting
-              us at info@teencare.vn. Please note: deleting or removing the app
-              does not cancel your subscription.
-            </span>
-          </div>
-          <div className="text-center flex gap-2 justify-center items-center">
-            <Shield className="text-[#FFAC08]" />
-            <p className="text-[#18181B] font-medium text-[12px] underline">
-              30-DAY MONEY-BACK GUARANTEE
-            </p>
-          </div>
-          <div className="relative h-5.5! w-82!">
-            <Image
-              src="/images/pays.png"
-              alt="Survey Image"
-              fill
-              sizes="328px"
-              className="object-cover"
-              unoptimized
-              priority
-            />
           </div>
         </div>
       </div>
