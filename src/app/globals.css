@@ -796,10 +796,6 @@ body {
   }
 }
 
-/* ============================
-   Button Component
-   ============================ */
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -1167,10 +1163,6 @@ body {
   background: linear-gradient(180deg, #ffc75a 0%, #ffac08 100%);
 }
 
-/* ============================
-   Step35: 3 màn hình animation
-   ============================ */
-
 .step35-viewport {
   width: 100%;
   max-width: 480px;
@@ -1251,7 +1243,6 @@ body {
   background: var(--color-primary-50, #FFFAEF) !important;
 }
 
-/* Custom Scrollbar */
 .custom-scrollbar::-webkit-scrollbar {
   width: 6px;
 }
