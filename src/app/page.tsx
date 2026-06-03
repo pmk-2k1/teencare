@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import Image from "next/image";
 import { surveySteps } from "@/src/steps";
 import { useI18n } from "@/src/i18n/context";
@@ -25,6 +25,8 @@ export default function SurveyPage() {
   const [isCompleted, setIsCompleted] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const isAnimatingRef = useRef(false);
+  const singleSelectTimeoutRef = useRef<number | null>(null);
 
   const totalSteps = surveySteps.length;
   const currentQuestion = surveySteps[currentStep];
@@ -119,7 +121,8 @@ export default function SurveyPage() {
   }, []);
 
   const goToNext = useCallback(() => {
-    if (isAnimating) return;
+    if (isAnimatingRef.current || isAnimating) return;
+    isAnimatingRef.current = true;
     setIsAnimating(true);
     setDirection("forward");
 
@@ -131,43 +134,52 @@ export default function SurveyPage() {
         setShowConfetti(true);
         setTimeout(() => setShowConfetti(false), 2000);
       }
+      isAnimatingRef.current = false;
       setIsAnimating(false);
     }, 350);
   }, [currentStep, totalSteps, isAnimating]);
 
   const goToPrev = useCallback(() => {
-    if (isAnimating || currentStep === 0) return;
+    if (isAnimatingRef.current || isAnimating || currentStep === 0) return;
+    isAnimatingRef.current = true;
     setIsAnimating(true);
     setDirection("backward");
 
     setTimeout(() => {
       setCurrentStep((prev) => prev - 1);
+      isAnimatingRef.current = false;
       setIsAnimating(false);
     }, 350);
   }, [currentStep, isAnimating]);
 
   const goToStep = useCallback((stepIndex: number) => {
-    if (isAnimating) return;
+    if (isAnimatingRef.current || isAnimating) return;
+    isAnimatingRef.current = true;
     setIsAnimating(true);
     setDirection("forward");
 
     setTimeout(() => {
       setCurrentStep(stepIndex);
+      isAnimatingRef.current = false;
       setIsAnimating(false);
     }, 350);
   }, [isAnimating]);
 
   const handleSingleSelect = useCallback(
     (optionId: string) => {
-      if (isAnimating) return;
+      if (isAnimatingRef.current || isAnimating) return;
       setAnswers((prev) => ({ ...prev, [currentStep]: [optionId] }));
 
+      if (singleSelectTimeoutRef.current !== null) {
+        window.clearTimeout(singleSelectTimeoutRef.current);
+      }
+
       // Auto advance after a brief delay for visual feedback
-      setTimeout(() => {
+      singleSelectTimeoutRef.current = window.setTimeout(() => {
         goToNext();
       }, 300);
     },
-    [currentStep, goToNext, isAnimating]
+    [currentStep, goToNext]
   );
 
   const handleMultipleSelect = useCallback(
