@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "TeenCare - Khảo Sát Sức Khoẻ",
+  title: "TeenCare - Personalized Plan",
   description:
-    "Khảo sát sức khoẻ dành cho thanh thiếu niên - Giúp chúng tôi hiểu bạn hơn để tùy chỉnh trải nghiệm tốt nhất.",
+    "Get your personalized parenting plan to help you build better connections and communicate effectively with your teens.",
 };
 
 export const viewport: Viewport = {
@@ -33,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="vi"
+      lang="en"
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
       <body>

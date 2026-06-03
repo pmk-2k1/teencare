@@ -180,7 +180,7 @@ export default function CheckoutSuccessContent() {
   };
 
   return (
-    <div className="survey-container flex flex-col items-center justify-center min-h-screen p-6 gap-6 w-full max-w-md mx-auto">
+    <div className="survey-container flex flex-col items-center justify-center min-h-screen p-6 gap-6 w-full max-w-md mx-auto px-4!">
       {phase === "loading" || phase === "submitting" ? (
         <>
           <h1 className="text-[28px] font-bold text-[#18181B] text-center">

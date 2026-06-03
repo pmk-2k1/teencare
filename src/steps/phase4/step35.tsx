@@ -37,7 +37,7 @@ function CustomPage35({ onNext }: { onNext: () => void }) {
         next[step] = Math.min(100, next[step] + 6);
         return next;
       });
-    }, 160);
+    }, 80);
 
     return () => clearInterval(id);
   }, [step, itemCount]);
