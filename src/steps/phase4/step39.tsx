@@ -11,49 +11,26 @@ import ArrowDown from "@/src/app/assets/svg/ArrowDown";
 import Logo from "@/src/app/assets/svg/Logo";
 import type { PlanId } from "@/src/lib/stripe/plans";
 import {
-  ANSWERS_STORAGE_KEY,
+  applySheetAnswersToPayload,
+  loadStoredAnswers,
+} from "@/src/lib/survey/buildSheetPayload";
+import {
   PENDING_SURVEY_STORAGE_KEY,
   SESSION_ID_STORAGE_KEY,
   STEP35_EMAIL_STORAGE_KEY,
 } from "@/src/lib/survey/storageKeys";
-
-type StoredAnswers = Record<string, string[]>;
 
 const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const parseStoredAnswers = (): StoredAnswers => {
-    try {
-      const raw = localStorage.getItem(ANSWERS_STORAGE_KEY);
-      if (!raw) return {};
-      const parsed = JSON.parse(raw);
-      if (!parsed || typeof parsed !== "object") return {};
-      return parsed as StoredAnswers;
-    } catch {
-      return {};
-    }
-  };
-
-  const getStepAnswersPayload = (stored: StoredAnswers) => {
-    const result: Record<string, string[]> = {};
-    for (let stepNumber = 1; stepNumber <= 39; stepNumber += 1) {
-      const zeroBased = String(stepNumber - 1);
-      const value = stored[zeroBased];
-      result[`step${stepNumber}`] = Array.isArray(value) ? value : [];
-    }
-    return result;
-  };
-
   const buildSurveyPayload = (
     planId: PlanId,
     email: string,
     sessionId: string,
   ) => {
-    const storedAnswers = parseStoredAnswers();
-    const stepAnswers = getStepAnswersPayload(storedAnswers);
-    return {
+    const base = {
       email,
       source: "teencare-phase4",
       submitted_at: new Date().toISOString(),
@@ -61,9 +38,9 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
       payment_paid: "no",
       payment_status: "pending",
       plan_step1: planId,
-      step_answers: stepAnswers,
       user_agent: navigator.userAgent,
     };
+    return applySheetAnswersToPayload(base, loadStoredAnswers());
   };
 
   const handleGetPlan = async () => {

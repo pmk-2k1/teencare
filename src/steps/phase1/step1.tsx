@@ -1,4 +1,6 @@
 import type { SurveyStep } from "@/src/types/survey";
+import type { SurveyCustomPageProps } from "@/src/lib/survey/customPageTypes";
+import en from "@/src/i18n/locales/en";
 import Image from "next/image";
 import TimeIcon from "@/src/app/assets/svg/Time";
 import Button from "@/src/component/Button";
@@ -6,8 +8,18 @@ import Arrow from "@/src/app/assets/svg/Arrow";
 import { useI18n } from "@/src/i18n/context";
 import Logo from "@/src/app/assets/svg/Logo";
 
-const CustomPage = ({ onNext }: { onNext: () => void }) => {
+const CustomPage = ({ onNext, onSaveAnswer }: SurveyCustomPageProps) => {
   const { t } = useI18n();
+
+  const handleDad = () => {
+    onSaveAnswer?.([en.dad]);
+    onNext();
+  };
+
+  const handleMom = () => {
+    onSaveAnswer?.([en.mom]);
+    onNext();
+  };
 
   return (
     <div className="flex flex-col items-center gap-y-10 pt-10 mt-10!">
@@ -48,7 +60,7 @@ const CustomPage = ({ onNext }: { onNext: () => void }) => {
               priority
             />
           </div>
-          <Button variant="primary" onClick={onNext} id="btn-dad" className="text-[#18181B] w-full" size="sm" iconRight={<Arrow />}>
+          <Button variant="primary" onClick={handleDad} id="btn-dad" className="text-[#18181B] w-full" size="sm" iconRight={<Arrow />}>
             {t("dad")}
           </Button>
         </div>
@@ -66,7 +78,7 @@ const CustomPage = ({ onNext }: { onNext: () => void }) => {
               priority
             />
           </div>
-          <Button variant="primary" onClick={onNext} id="btn-mom" className="text-[#18181B] w-full" size="sm" iconRight={<Arrow />}>
+          <Button variant="primary" onClick={handleMom} id="btn-mom" className="text-[#18181B] w-full" size="sm" iconRight={<Arrow />}>
             {t("mom")}
           </Button>
         </div>

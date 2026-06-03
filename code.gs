@@ -15,6 +15,7 @@ var DEDUPE_WINDOW_MINUTES = 30;
 var HEADER_COLUMNS = [
   "timestamp",
   "email",
+  "parent_role",
   "step1",
   "step2",
   "step3",
@@ -131,6 +132,7 @@ function buildRowArray_(payload, now) {
   return [
     now,
     normalizeEmail_(payload.email),
+    getString_(payload.parent_role) || getParentRoleFromPayload_(payload),
     getStepAnswer_(payload, 1),
     getStepAnswer_(payload, 2),
     getStepAnswer_(payload, 3),
@@ -199,6 +201,16 @@ function buildRowArray_(payload, now) {
   ];
 }
 
+function getParentRoleFromPayload_(payload) {
+  var fromField = getString_(payload.parent_role);
+  if (fromField) return fromField;
+
+  var step1 = getStepAnswer_(payload, 1);
+  if (step1) return step1;
+
+  return "";
+}
+
 function getPaymentPaid_(payload) {
   var status = getString_(payload.payment_paid || payload.payment_status).toLowerCase();
   if (status === "yes" || status === "paid" || status === "true" || status === "1") {
@@ -224,6 +236,13 @@ function updateRowBySessionId_(sheet, sessionId, payload, now) {
 
     setCellIfColumnExists_(sheet, r, colMap, "timestamp", now);
     setCellIfColumnExists_(sheet, r, colMap, "payment_paid", "yes");
+    setCellIfColumnExists_(
+      sheet,
+      r,
+      colMap,
+      "parent_role",
+      getString_(payload.parent_role) || getParentRoleFromPayload_(payload)
+    );
     setCellIfColumnExists_(sheet, r, colMap, "full_name", getString_(payload.full_name));
     setCellIfColumnExists_(sheet, r, colMap, "phone", getString_(payload.phone));
     setCellIfColumnExists_(
