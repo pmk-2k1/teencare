@@ -10,6 +10,9 @@ import Button from "@/src/component/Button";
 import Arrow from "@/src/app/assets/svg/Arrow";
 import Logo from "@/src/app/assets/svg/Logo";
 
+const STEP35_EMAIL_STORAGE_KEY = "teencare_step35_email";
+const ANSWERS_STORAGE_KEY = "teencare_survey_answers";
+
 function CustomPage35({ onNext }: { onNext: () => void }) {
   const [step, setStep] = useState(0);
   const labels = [
@@ -64,6 +67,15 @@ function CustomPage35({ onNext }: { onNext: () => void }) {
       return;
     }
     setEmailError(null);
+    try {
+      localStorage.setItem(STEP35_EMAIL_STORAGE_KEY, email.trim().toLowerCase());
+      const rawAnswers = localStorage.getItem(ANSWERS_STORAGE_KEY);
+      const parsedAnswers = rawAnswers ? JSON.parse(rawAnswers) : {};
+      parsedAnswers["34"] = [email.trim().toLowerCase()];
+      localStorage.setItem(ANSWERS_STORAGE_KEY, JSON.stringify(parsedAnswers));
+    } catch {
+      // Ignore localStorage issues and continue flow
+    }
     onNext();
   };
 

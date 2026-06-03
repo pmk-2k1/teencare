@@ -9,6 +9,16 @@ import Apple from "@/src/app/assets/svg/Apple";
 import GooglePlay from "@/src/app/assets/svg/GooglePlay";
 import ArrowDown from "@/src/app/assets/svg/ArrowDown";
 import Logo from "@/src/app/assets/svg/Logo";
+import type { PlanId } from "@/src/lib/stripe/plans";
+import {
+  ANSWERS_STORAGE_KEY,
+  PENDING_SURVEY_STORAGE_KEY,
+  SESSION_ID_STORAGE_KEY,
+  STEP35_EMAIL_STORAGE_KEY,
+} from "@/src/lib/survey/storageKeys";
+
+type StoredAnswers = Record<string, string[]>;
+type PlanSection = "primary" | "secondary";
 
 const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
@@ -16,6 +26,139 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
     null,
   );
   const [selectedPayment, setSelectedPayment] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
+  const parseStoredAnswers = (): StoredAnswers => {
+    try {
+      const raw = localStorage.getItem(ANSWERS_STORAGE_KEY);
+      if (!raw) return {};
+      const parsed = JSON.parse(raw);
+      if (!parsed || typeof parsed !== "object") return {};
+      return parsed as StoredAnswers;
+    } catch {
+      return {};
+    }
+  };
+
+  const getStepAnswersPayload = (stored: StoredAnswers) => {
+    const result: Record<string, string[]> = {};
+    for (let stepNumber = 1; stepNumber <= 39; stepNumber += 1) {
+      const zeroBased = String(stepNumber - 1);
+      const value = stored[zeroBased];
+      result[`step${stepNumber}`] = Array.isArray(value) ? value : [];
+    }
+    return result;
+  };
+
+  const buildSurveyPayload = (
+    planId: PlanId,
+    planSection: PlanSection,
+    email: string,
+    sessionId: string,
+  ) => {
+    const storedAnswers = parseStoredAnswers();
+    const stepAnswers = getStepAnswersPayload(storedAnswers);
+    return {
+      email,
+      source: "teencare-phase4",
+      submitted_at: new Date().toISOString(),
+      session_id: sessionId,
+      payment_paid: "no",
+      payment_status: "pending",
+      plan_step1: planSection === "primary" ? planId : selectedPlan,
+      plan_step2: planSection === "secondary" ? planId : selectedPlanSecond,
+      payment_method: selectedPayment,
+      step_answers: stepAnswers,
+      user_agent: navigator.userAgent,
+    };
+  };
+
+  const handleGetPlan = async (planSection: PlanSection) => {
+    if (isSubmitting) return;
+    setSubmitError(null);
+
+    const planId =
+      planSection === "primary" ? selectedPlan : selectedPlanSecond;
+
+    if (!planId || (planId !== "week" && planId !== "month" && planId !== "quarterly")) {
+      setSubmitError("Please select a plan before continuing.");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const email = localStorage
+        .getItem(STEP35_EMAIL_STORAGE_KEY)
+        ?.trim()
+        .toLowerCase();
+      if (!email) {
+        throw new Error("Missing email from step 35");
+      }
+
+      let sessionId = localStorage.getItem(SESSION_ID_STORAGE_KEY);
+      if (!sessionId) {
+        sessionId = `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+        localStorage.setItem(SESSION_ID_STORAGE_KEY, sessionId);
+      }
+
+      const payload = buildSurveyPayload(
+        planId as PlanId,
+        planSection,
+        email,
+        sessionId,
+      );
+
+      try {
+        sessionStorage.setItem(
+          PENDING_SURVEY_STORAGE_KEY,
+          JSON.stringify(payload),
+        );
+      } catch {
+        // Continue checkout even if sessionStorage is unavailable
+      }
+
+      const surveyResponse = await fetch("/api/survey-submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!surveyResponse.ok) {
+        throw new Error("Failed to save your answers");
+      }
+
+      const checkoutResponse = await fetch("/api/stripe/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          planId,
+          email,
+          sessionId,
+        }),
+      });
+
+      const checkoutData = (await checkoutResponse.json()) as {
+        ok?: boolean;
+        url?: string;
+        error?: string;
+      };
+
+      if (!checkoutResponse.ok || !checkoutData.ok || !checkoutData.url) {
+        throw new Error(checkoutData.error || "Failed to start checkout");
+      }
+
+      window.location.href = checkoutData.url;
+    } catch (err) {
+      setSubmitError(
+        err instanceof Error
+          ? err.message
+          : "Failed to start payment. Please go back and check your email, then try again.",
+      );
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="flex flex-col justify-start pt-10! min-h-full! flex-1 gap-5">
@@ -111,12 +254,16 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
           </div>
           <Button
             variant="primary"
-            onClick={onNext}
+            onClick={() => void handleGetPlan("primary")}
             id="btn-continue"
             className="text-[#18181B] w-full"
+            disabled={isSubmitting}
           >
-            Get my plan
+            {isSubmitting ? "Redirecting to payment..." : "Get my plan"}
           </Button>
+          {submitError ? (
+            <p className="text-[12px] text-[#DC2626] text-center">{submitError}</p>
+          ) : null}
         </div>
       </div>
 
@@ -415,11 +562,12 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
           </div>
           <Button
             variant="primary"
-            onClick={onNext}
-            id="btn-continue"
+            onClick={() => void handleGetPlan("secondary")}
+            id="btn-continue-secondary"
             className="text-[#18181B] w-full"
+            disabled={isSubmitting}
           >
-            Get my plan
+            {isSubmitting ? "Redirecting to payment..." : "Get my plan"}
           </Button>
         </div>
       </div>
