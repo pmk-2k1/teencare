@@ -9,8 +9,8 @@ const CustomPage38 = ({ onNext }: { onNext: () => void }) => {
   const { t } = useI18n();
 
   return (
-    <div className="flex flex-col items-center justify-between pt-10! min-h-full! flex-1 gap-10">
-      <div className="flex flex-col gap-10">
+    <div className="flex flex-col items-center justify-between pt-7.5! min-h-full! flex-1 gap-10">
+      <div className="flex flex-col gap-8">
         <div className="flex flex-col gap-1">
           <p className="text-[24px] font-semibold text-[#18181B]">
             What changes in 3 months
@@ -20,12 +20,12 @@ const CustomPage38 = ({ onNext }: { onNext: () => void }) => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-5">
-          <div className="space-before flex flex-col gap-y-5">
+        <div className="grid grid-cols-2 gap-3 mt-5!">
+          <div className="space-before flex flex-col gap-y-6">
             <p className="text-[20px] font-semibold text-[#18181B] text-center">
               Before
             </p>
-            <div className="flex flex-col text-[12px] text-[#18181B] gap-y-3">
+            <div className="flex flex-col text-[12px] text-[#18181B] gap-y-4">
               <div className="flex flex-col gap-y-2 justify-center items-center">
                 <CloseCircle />
                 <p className="text-center">You react before you think</p>
@@ -44,11 +44,11 @@ const CustomPage38 = ({ onNext }: { onNext: () => void }) => {
               </div>
             </div>
           </div>
-          <div className="space-after flex flex-col gap-y-5">
+          <div className="space-after flex flex-col gap-y-6">
             <p className="text-[20px] font-semibold text-[#18181B] text-center">
               After
             </p>
-            <div className="flex flex-col text-[12px] text-[#18181B] gap-y-3">
+            <div className="flex flex-col text-[12px] text-[#18181B] gap-y-4">
               <div className="flex flex-col gap-y-2 justify-center items-center">
                 <CheckCircle />
                 <p className="text-center">
@@ -81,7 +81,7 @@ const CustomPage38 = ({ onNext }: { onNext: () => void }) => {
         variant="primary"
         onClick={onNext}
         id="btn-continue"
-        className="text-[#18181B] w-full"
+        className="text-[#18181B] w-full hover:!transform-none hover:!shadow-none"
       >
         {t("continue")}
       </Button>

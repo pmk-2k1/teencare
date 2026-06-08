@@ -136,7 +136,7 @@ export default function SurveyPage() {
       }
       isAnimatingRef.current = false;
       setIsAnimating(false);
-    }, 350);
+    }, 200);
   }, [currentStep, totalSteps, isAnimating]);
 
   const goToPrev = useCallback(() => {
@@ -149,7 +149,7 @@ export default function SurveyPage() {
       setCurrentStep((prev) => prev - 1);
       isAnimatingRef.current = false;
       setIsAnimating(false);
-    }, 350);
+    }, 200);
   }, [currentStep, isAnimating]);
 
   const goToStep = useCallback((stepIndex: number) => {
@@ -162,7 +162,7 @@ export default function SurveyPage() {
       setCurrentStep(stepIndex);
       isAnimatingRef.current = false;
       setIsAnimating(false);
-    }, 350);
+    }, 200);
   }, [isAnimating]);
 
   const handleSingleSelect = useCallback(

@@ -1,4 +1,6 @@
 "use client";
+import Accept from "../app/assets/svg/Accept";
+import NotAcceptedIcon from "../app/assets/svg/NotAccepted";
 
 interface OptionButtonProps {
   label?: string;
@@ -21,7 +23,7 @@ export default function OptionButton({
 }: OptionButtonProps) {
   return (
     <button
-      className={`option-button ${selected ? "selected bg-[#FFF7E8]! border-[#FFAC08]!" : ""} hover:bg-[#FFF7E8] hover:border-[#FFAC08] transition-colors`}
+      className={`option-button ${selected ? "selected" : ""} ${selectionType === "single" ? "single" : "multiple"}`}
       onClick={onClick}
       style={{ animationDelay: `${animationDelay}s` }}
     >
@@ -29,8 +31,10 @@ export default function OptionButton({
       <span className="option-label">{label}</span>
       {selectionType === "single" ? (
         <></>
+      ) : selected ? (
+        <Accept />
       ) : (
-        <span className="option-check" />
+        <NotAcceptedIcon />
       )}
       {extra && <span className="option-extra">{extra}</span>}
     </button>

@@ -153,8 +153,8 @@ const CustomPage37 = ({ onNext }: { onNext: () => void }) => {
   const { t } = useI18n();
 
   return (
-    <div className="flex flex-col items-center justify-between pt-10! min-h-full! flex-1 gap-10">
-      <div className="flex flex-col gap-5">
+    <div className="flex flex-col items-center justify-between pt-7.5! min-h-full! flex-1 gap-10">
+      <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-1">
           <p className="text-[24px] font-semibold text-[#18181B]">
             Your personalized 3-month plan{" "}
@@ -165,7 +165,7 @@ const CustomPage37 = ({ onNext }: { onNext: () => void }) => {
         </div>
         <Chart />
         <div className="flex flex-col px-5!">
-          <div className="flex gap-x-10 py-5! border-b border-b-[#E4E4E7]">
+          <div className="flex gap-x-10 py-4! border-b border-b-[#E4E4E7]">
             <div className="flex gap-x-2">
               <CheckCircle />
               <p className="text-[16px] font-semibold text-[#18181B]">Week 1</p>
@@ -173,14 +173,14 @@ const CustomPage37 = ({ onNext }: { onNext: () => void }) => {
             <p className="text-[16px] font-semibold text-[#18181B]">You Stay Calm</p>
           </div>
 
-          <div className="flex gap-x-10 py-5! border-b border-b-[#E4E4E7]">
+          <div className="flex gap-x-10 py-4! border-b border-b-[#E4E4E7]">
             <div className="flex gap-x-2">
               <CheckCircle />
               <p className="text-[16px] font-semibold text-[#18181B]">Month 1</p>
             </div>
             <p className="text-[16px] font-semibold text-[#18181B]">You Handle the Hard Stuff</p>
           </div>
-          <div className="flex gap-x-10 py-5!">
+          <div className="flex gap-x-10 py-4!">
             <div className="flex gap-x-2">
               <CheckCircle />
               <p className="text-[16px] font-semibold text-[#18181B]">Month 1</p>

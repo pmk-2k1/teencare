@@ -80,11 +80,11 @@ function CustomPage35({ onNext }: { onNext: () => void }) {
   };
 
   return (
-    <div className="flex flex-col items-center justify-between pt-10! min-h-full! flex-1">
+    <div className="flex flex-col items-center justify-between mt-7.5! min-h-full! flex-1">
       {step < itemCount && (
         <>
           <div className="flex flex-col justify-center gap-y-8 w-full">
-            <div className="flex flex-col gap-5 justify-center">
+            <div className="flex flex-col gap-6 justify-center">
               <div className="flex items-end justify-center gap-1">
                 <div className="flex mb-0.5!">
                   <Logo />
@@ -99,7 +99,7 @@ function CustomPage35({ onNext }: { onNext: () => void }) {
               </div>
             </div>
             <div className="w-full">
-              <div className="w-full flex flex-col gap-y-5 justify-center">
+              <div className="w-full flex flex-col gap-y-6 justify-center">
                 {labels.map((label, i) => {
                   if (i > step) return null;
                   return (
@@ -108,7 +108,7 @@ function CustomPage35({ onNext }: { onNext: () => void }) {
                       initial={{ opacity: 0, y: 6 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.35, delay: i * 0.08 }}
-                      className="bg-white flex flex-col gap-2"
+                      className="flex flex-col gap-2"
                     >
                       <div className="flex items-center justify-between mb-2">
                         <div className="text-[18px] font-extrabold text-[#18181B]">
@@ -164,10 +164,10 @@ function CustomPage35({ onNext }: { onNext: () => void }) {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-y-5 justify-center w-full">
-            <div className="w-full flex items-center justify-center gap-x-3">
+          <div className="flex flex-col gap-y-6 justify-center w-full">
+            <div className="w-full flex items-center justify-center gap-x-2">
               <div className="h-px bg-[#E4E4E7] flex-1" />
-              <div className="flex items-center px-6">
+              <div className="flex items-center px-6 gap-4">
                 <div className="flex gap-3 justify-center items-center mr-4">
                   <p className="text-[24px] text-[#18181B] font-semibold">
                     4.8
@@ -182,7 +182,7 @@ function CustomPage35({ onNext }: { onNext: () => void }) {
             </div>
 
             <div className="flex flex-col gap-y-5 w-full mt-8 max-h-[160px] overflow-y-auto pb-4 pr-1 custom-scrollbar">
-              <div className="feed-back flex flex-col gap-y-5 shrink-0">
+              <div className="feed-back flex flex-col gap-y-4 shrink-0">
                 <div className="flex justify-between items-center">
                   <div className="flex gap-1">
                     <Star />
@@ -241,7 +241,7 @@ function CustomPage35({ onNext }: { onNext: () => void }) {
             transition={{ duration: 0.6 }}
           >
             <div className="flex flex-col justify-between min-h-0 flex-1 gap-10">
-              <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-6">
                 <div className="flex flex-col gap-1">
                   <p className="text-[24px] font-semibold text-[#18181B]">
                     You’re closer than you think
@@ -261,7 +261,7 @@ function CustomPage35({ onNext }: { onNext: () => void }) {
                     required
                     error={emailError}
                   />
-                  <div className="flex gap-x-1 text-[#1A1A1A] text-[12px] items-center">
+                  <div className="flex gap-x-1 text-[#A1A1AA] text-[12px] items-center">
                     <ErrorCircle />
                     <p>No spam. Unsubscribe anytime.</p>
                   </div>
@@ -277,16 +277,16 @@ function CustomPage35({ onNext }: { onNext: () => void }) {
                 >
                   Get my plan
                 </Button>
-                <div className="flex flex-col gap-2 text-[12px] text-[#6B6B6B] font-medium justify-center text-center">
+                <div className="flex flex-col gap-2 text-[12px] text-[#A1A1AA] font-medium justify-center text-center">
                   <p>By continuing you agree with</p>
                   <div className="w-full flex justify-between items-center flex-wrap text-center">
-                    <a href="https://vn.teencare.co/dieukhoandichvu" target="_blank" className="underline text-[12px] text-[#6B6B6B]">
+                    <a href="https://www.teencare.us/termprivacy" target="_blank" className="underline text-[12px] text-[#A1A1AA]">
                       Terms & Conditions
                     </a>
-                    <a href="https://vn.teencare.co/dieukhoandichvu" target="_blank" className="underline text-[12px] text-[#6B6B6B]">
+                    <a href="https://www.teencare.us/termprivacy" target="_blank" className="underline text-[12px] text-[#A1A1AA]">
                       Privacy Policy
                     </a>
-                    <a href="https://vn.teencare.co/dieukhoandichvu" target="_blank" className="underline text-[12px] text-[#6B6B6B]">
+                    <a href="https://www.teencare.us/termprivacy" target="_blank" className="underline text-[12px] text-[#A1A1AA]">
                       Subscription Policy
                     </a>
                   </div>
