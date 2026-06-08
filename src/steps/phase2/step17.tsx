@@ -7,15 +7,15 @@ const CustomPage17 = ({ onNext }: { onNext: () => void }) => {
   const { t } = useI18n();
 
   return (
-    <div className="flex flex-col items-center justify-between pt-10! min-h-full! flex-1 gap-10">
-      <div className="flex flex-col gap-7 justify-center justify-center">
+    <div className="flex flex-col items-center justify-between pt-7.5! min-h-full! flex-1 mt-7.5! gap-10" >
+      <div className="flex flex-col gap-6 justify-center justify-center">
         <div className="px-3! flex justify-center items-center w-full max-w-[500px]">
           <Image
-            src="/images/step17.png"
+            src="/images/step17_1.png"
             alt="Survey Image"
             width={500}
             height={500}
-            className="object-contain animate-bounce-in"
+            className="object-contain"
             style={{ width: "100%", height: "auto" }}
             unoptimized
             priority

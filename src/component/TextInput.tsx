@@ -31,12 +31,11 @@ export default function TextInput({
         placeholder={placeholder}
         aria-required={required}
         aria-invalid={!!error}
-        className={`w-full h-12 px-3! rounded-md text-sm border ${
-          error ? "border-red-500" : "border-gray-200"
-        } focus:outline-none focus:border-primary`}
+        className={`w-full h-12 py-3! pr-3! pl-4! rounded-[12px] text-sm border ${error ? "border-red-500" : "border-[#E4E4E7]"
+          } focus:outline-none focus:border-[#FF8F1D]`}
       />
       {error ? (
-        <p className="text-xs text-red-500 mt-2">{error}</p>
+        <p className="text-xs text-red-500">{error}</p>
       ) : null}
     </div>
   );

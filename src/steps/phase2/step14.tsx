@@ -11,7 +11,7 @@ const Tooltip = ({ color, text, delay, className = "" }: { color: string, text: 
     className="flex flex-col items-center"
   >
     <div
-      className={`${className} text-white text-[10px] font-bold px-[8px]! py-[10px]! rounded-sm flex-col flex items-center text-center justify-center`}
+      className={`${className} text-white text-[10px] font-bold p-[8px]! rounded-sm flex-col flex items-center text-center justify-center`}
       style={{ backgroundColor: color }}
     >
       {text.split(/\\n|\n/).map((line, index) => (
@@ -144,7 +144,7 @@ const Chart = () => {
 
       {/* Frame 3 */}
       <div className="absolute flex flex-col items-center z-20 gap-2" style={{ left: '87%', top: '0px', transform: 'translateX(-50%)' }}>
-        <Tooltip color="#00BF36" text="Knowledge \n+ Daily practice" delay={2.9} className="w-[92px]!" />
+        <Tooltip color="#00BF36" text="Knowledge \n+ Daily practice" delay={2.9} className="w-[100px]!" />
         <Circle size={18} color="#00BF36" delay={2.8} />
         <Rect height={200} color1="#00BF36" color2="#FFFAF0" delay={3.0} />
         <Circle size={6} color="#00DF56" delay={3.8} />
@@ -164,9 +164,9 @@ const CustomPage14 = ({ onNext }: { onNext: () => void }) => {
   const { t } = useI18n();
 
   return (
-    <div className="flex flex-col items-center justify-between pt-10! min-h-full! flex-1 mt-10! gap-10">
-      <div className="flex flex-col justify-center items-center w-full">
-        <div className="flex flex-col gap-2 mb-5!">
+    <div className="flex flex-col items-center justify-between pt-7.5! min-h-full! flex-1 mt-7.5! gap-10" >
+      <div className="flex flex-col justify-center items-center w-full gap-y-6">
+        <div className="flex flex-col gap-1">
           <p className="text-[#18181B] text-[24px] font-semibold text-center">Reading gives you knowledge.</p>
           <p className="text-[#FFAC08] text-[24px] font-semibold text-center">Practice makes it stick.</p>
         </div>
@@ -178,7 +178,7 @@ const CustomPage14 = ({ onNext }: { onNext: () => void }) => {
         variant="primary"
         onClick={onNext}
         id="btn-continue"
-        className="text-[#18181B] w-full mt-8"
+        className="text-[#18181B] w-full"
       >
         {t("continue")}
       </Button>

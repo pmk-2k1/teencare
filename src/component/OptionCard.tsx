@@ -1,5 +1,8 @@
 "use client";
 
+import Accept from "../app/assets/svg/Accept";
+import NotAcceptedIcon from "../app/assets/svg/NotAccepted";
+
 interface OptionCardProps {
   label?: string;
   emoji?: string;
@@ -19,18 +22,18 @@ export default function OptionCard({
 }: OptionCardProps) {
   return (
     <button
-      className={`option-card ${selected ? "selected bg-[#FFF7E8]! border-[#FFAC08]!" : ""} hover:bg-[#FFF7E8] hover:border-[#FFAC08] transition-colors`}
+      className={`option-card flex flex-col items-center ${selectionType === "single" ? "justify-center" : ""} ${selected ? "selected" : ""} ${selectionType === "single" ? "single" : "multiple"}`}
       onClick={onClick}
       style={{ animationDelay: `${animationDelay}s` }}
     >
-      <span className="option-card__indicator">
-        {selectionType === "single" ? (
-          <></>
-        ) : (
-          <span className="option-check" />
-        )}
-      </span>
-      <span className="option-card__emoji">{emoji}</span>
+      {selectionType !== "single" && (
+        <span className="option-card__indicator">
+          {selected ? <Accept /> : <NotAcceptedIcon />}
+        </span>
+      )}
+      {selectionType === "single" && (
+        <span className="option-card__emoji">{emoji}</span>
+      )}
       <span className="option-card__label">{label}</span>
     </button>
   );

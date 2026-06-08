@@ -8,8 +8,8 @@ const CustomPage36 = ({ onNext, onSkipTo }: { onNext: () => void; onSkipTo?: (st
   const { t } = useI18n();
 
   return (
-    <div className="flex flex-col items-center justify-between pt-10! min-h-full! flex-1 gap-10">
-      <div className="flex flex-col gap-10 justify-center">
+    <div className="flex flex-col items-center justify-between pt-7.5! min-h-full! flex-1 gap-10">
+      <div className="flex flex-col gap-12 justify-center">
         <div className="flex items-end justify-center gap-1">
           <div className="flex mb-0.5!">
             <Logo />
@@ -23,13 +23,13 @@ const CustomPage36 = ({ onNext, onSkipTo }: { onNext: () => void; onSkipTo?: (st
           <p>Want tips that actually apply to your family?</p>
         </div>
       </div>
-      <div className="flex flex-col gap-y-5 w-full">
+      <div className="flex flex-col gap-y-8 w-full">
         <div className="flex flex-col gap-y-3 w-full">
           <Button
             variant="primary"
             onClick={onNext}
             id="btn-continue"
-            className="text-[#18181B] w-full"
+            className="text-[#18181B] w-full hover:!transform-none hover:!shadow-none"
           >
             Yes, count me in
           </Button>
@@ -37,19 +37,19 @@ const CustomPage36 = ({ onNext, onSkipTo }: { onNext: () => void; onSkipTo?: (st
             variant="outline"
             onClick={() => onSkipTo ? onSkipTo(38) : onNext()}
             id="btn-continue"
-            className="text-[#18181B] w-full"
+            className="text-[#18181B] w-full hover:!transform-none hover:!shadow-none"
           >
             {"No, I don't need tips"}
           </Button>
         </div>
         <div className="w-full flex justify-between items-center flex-wrap text-center">
-          <a href="https://vn.teencare.co/dieukhoandichvu" target="_blank" className="underline text-[12px] text-[#6B6B6B]">
+          <a href="https://www.teencare.us/termprivacy" target="_blank" className="underline text-[12px] text-[#A1A1AA]">
             Terms & Conditions
           </a>
-          <a href="https://vn.teencare.co/dieukhoandichvu" target="_blank" className="underline text-[12px] text-[#6B6B6B]">
+          <a href="https://www.teencare.us/termprivacy" target="_blank" className="underline text-[12px] text-[#A1A1AA]">
             Privacy Policy
           </a>
-          <a href="https://vn.teencare.co/dieukhoandichvu" target="_blank" className="underline text-[12px] text-[#6B6B6B]">
+          <a href="https://www.teencare.us/termprivacy" target="_blank" className="underline text-[12px] text-[#A1A1AA]">
             Subscription Policy
           </a>
         </div>

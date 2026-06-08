@@ -22,8 +22,8 @@ const CustomPage = ({ onNext, onSaveAnswer }: SurveyCustomPageProps) => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-y-10 pt-10 mt-10!">
-      <div className="flex items-end justify-center gap-1">
+    <div className="flex flex-col items-center gap-y-6 mt-7.5!">
+      <div className="flex items-end justify-center gap-1 mb-6!">
         <div className="flex mb-0.5!">
           <Logo />
         </div>
@@ -33,11 +33,11 @@ const CustomPage = ({ onNext, onSaveAnswer }: SurveyCustomPageProps) => {
         </p>
       </div>
 
-      <div className="mx-3! flex flex-col items-center justify-center gap-y-4">
+      <div className="flex flex-col items-center justify-center gap-y-4">
         <p className="text-[32px] font-bold text-[#292929] text-center leading-[1.3]">
           {t("title")}
         </p>
-        <div className="flex items-center justify-center gap-1.5">
+        <div className="flex items-center justify-center gap-1">
           <TimeIcon className="w-5 h-5 shrink-0" />
 
           <p className="text-[16px] text-[#18181B] mt-0.5!">
@@ -46,7 +46,7 @@ const CustomPage = ({ onNext, onSaveAnswer }: SurveyCustomPageProps) => {
         </div>
       </div>
 
-      <div className="flex w-full px-6 gap-6 mt-2">
+      <div className="flex w-full gap-4">
         <div
           className="flex-1 flex flex-col items-center cursor-pointer group p-3! h-47 custom-page bg-[#FFFFFF]"
         >
@@ -60,7 +60,7 @@ const CustomPage = ({ onNext, onSaveAnswer }: SurveyCustomPageProps) => {
               priority
             />
           </div>
-          <Button variant="primary" onClick={handleDad} id="btn-dad" className="text-[#18181B] w-full" size="sm" iconRight={<Arrow />}>
+          <Button variant="primary" onClick={handleDad} id="btn-dad" className="text-[#18181B] w-full hover:!transform-none hover:!shadow-none" size="sm" iconRight={<Arrow />}>
             {t("dad")}
           </Button>
         </div>
@@ -78,7 +78,7 @@ const CustomPage = ({ onNext, onSaveAnswer }: SurveyCustomPageProps) => {
               priority
             />
           </div>
-          <Button variant="primary" onClick={handleMom} id="btn-mom" className="text-[#18181B] w-full" size="sm" iconRight={<Arrow />}>
+          <Button variant="primary" onClick={handleMom} id="btn-mom" className="text-[#18181B] w-full hover:!transform-none hover:!shadow-none" size="sm" iconRight={<Arrow />}>
             {t("mom")}
           </Button>
         </div>
