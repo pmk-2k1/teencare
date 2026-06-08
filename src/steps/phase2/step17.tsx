@@ -11,7 +11,7 @@ const CustomPage17 = ({ onNext }: { onNext: () => void }) => {
       <div className="flex flex-col gap-6 justify-center justify-center">
         <div className="px-3! flex justify-center items-center w-full max-w-[500px]">
           <Image
-            src="/images/step17_1.png"
+            src="/images/step17_1.webp"
             alt="Survey Image"
             width={500}
             height={500}

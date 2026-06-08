@@ -73,7 +73,7 @@ const Label = ({ text, color, delay }: { text: string, color: string, delay: num
 
 const Chart = () => {
   return (
-    <div className="relative w-full h-[360px] mt-2">
+    <div className="relative w-full h-[330px] mt-2">
       {/* Background horizontal lines */}
       <div className="absolute inset-0 z-0">
         {[70, 110, 150, 190, 230, 270, 310].map((y, i) => (
@@ -82,7 +82,7 @@ const Chart = () => {
       </div>
 
       {/* SVG Lines */}
-      <svg viewBox="0 0 100 360" preserveAspectRatio="none" className="absolute inset-0 w-full h-full z-10 overflow-visible">
+      <svg viewBox="0 0 100 330" preserveAspectRatio="none" className="absolute inset-0 w-full h-full z-10 overflow-visible">
         <defs>
           <linearGradient id="line1-grad" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="34.38%" stopColor="#FFAC08" />
@@ -95,7 +95,7 @@ const Chart = () => {
 
           <mask id="mask1">
             <motion.rect
-              x="10" y="0" height="360" fill="white"
+              x="10" y="0" height="330" fill="white"
               initial={{ width: 0 }}
               animate={{ width: 80 }}
               transition={{ delay: 1.8, duration: 1.5, ease: "easeInOut" }}
@@ -104,7 +104,7 @@ const Chart = () => {
 
           <mask id="mask2">
             <motion.rect
-              x="10" y="0" height="360" fill="white"
+              x="10" y="0" height="330" fill="white"
               initial={{ width: 0 }}
               animate={{ width: 60 }}
               transition={{ delay: 4.5, duration: 1.0, ease: "easeInOut" }}

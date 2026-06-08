@@ -99,7 +99,7 @@ const Chart = () => {
         </defs>
 
         <path
-          d="M 12 178 C 22 178, 26 198, 36 198 L 60 198 C 70 198, 74 148, 84 148 C 90 148, 95 135, 95 120"
+          d="M 12 178 C 22 178, 26 198, 36 198 L 60 198 C 70 198, 74 148, 84 148 C 90 148, 97 138, 97 125"
           stroke="url(#main-grad)"
           strokeWidth="4"
           strokeLinecap="round"
