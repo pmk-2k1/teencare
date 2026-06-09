@@ -286,7 +286,7 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
         </p>
         <div className="grid grid-cols-2">
           <div className="flex flex-col gap-1 p-4! justify-center items-center border-r border-b border-[#E4E4E7]">
-            <span className="font-bold text-[#FFAC08] text-[32px]">28K</span>
+            <span className="font-bold text-[#FFAC08] text-[32px]">100K</span>
             <span className="text-[#18181B] text-[14px] font-medium text-center">
               parents already practicing
             </span>
