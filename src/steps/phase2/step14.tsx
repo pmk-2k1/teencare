@@ -95,25 +95,25 @@ const Chart = () => {
 
           <mask id="mask1">
             <motion.rect
-              x="10" y="0" height="330" fill="white"
+              x="13" y="0" height="330" fill="white"
               initial={{ width: 0 }}
-              animate={{ width: 80 }}
+              animate={{ width: 70 }}
               transition={{ delay: 1.8, duration: 1.5, ease: "easeInOut" }}
             />
           </mask>
 
           <mask id="mask2">
             <motion.rect
-              x="10" y="0" height="330" fill="white"
+              x="13" y="0" height="330" fill="white"
               initial={{ width: 0 }}
-              animate={{ width: 60 }}
+              animate={{ width: 48 }}
               transition={{ delay: 4.5, duration: 1.0, ease: "easeInOut" }}
             />
           </mask>
         </defs>
 
         <path
-          d="M 10 208 L 20 208 C 28 208, 28 165, 36 165 L 46 165 C 54 165, 54 122, 62 122 L 72 122 C 80 122, 80 79, 83 79"
+          d="M13 208 C13.94 206.61, 17.78 210.42, 22.35 200.97 C27.28 190.76, 28.78 169.68, 37.07 169.68 C45.36 169.68, 48.23 184.05, 56.03 146.70 C61.76 119.24, 67.66 119.87, 70.39 115.08 C75.11 106.81, 75.42 81.88, 83.00 79.00"
           stroke="url(#line1-grad)"
           strokeWidth="4"
           strokeLinecap="round"
@@ -123,7 +123,7 @@ const Chart = () => {
         />
 
         <path
-          d="M 10 208 C 18 208, 18 229, 28 229 L 46 229 C 54 229, 54 250, 61 258"
+          d="M13 208 C14.34 207.0, 18.06 208.51, 22.29 222.73 C27.57 240.50, 30.96 207.50, 36.20 235.17 C38.25 245.70, 41.48 244.81, 47.33 239.99 C53.17 235.17, 52.14 256.75, 61.00 258.02"
           stroke="url(#line2-grad)"
           strokeWidth="4"
           strokeLinecap="round"
