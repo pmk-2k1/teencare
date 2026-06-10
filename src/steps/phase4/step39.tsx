@@ -24,7 +24,7 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
-  const [timeLeft, setTimeLeft] = useState(60 * 60);
+  const [timeLeft, setTimeLeft] = useState(10 * 60);
 
   useEffect(() => {
     const timerId = setInterval(() => {
@@ -244,6 +244,29 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
           ) : null}
         </div>
       </div>
+
+      {/* slide 9 */}
+      <div className="relative flex flex-col bg-[#FFFFFF] rounded-md p-4! gap-y-4">
+        <div className="absolute top-[-15px] right-[-15px] w-[90px] h-[90px]">
+          <Image
+            src="/images/moneyImage.webp"
+            alt="Money Back Guarantee"
+            fill
+            className="object-contain"
+            unoptimized
+          />
+        </div>
+        <p className="font-bold text-[18px] text-[#18181B] pr-12">
+          Money-Back Guarantee
+        </p>
+        <span className="font-medium text-[14px] text-[##52525B] whitespace-pre-line">
+          {
+            "Explore our app with confidence, backed by our Money-Back Guarantee. Our expertly crafted content ensures a risk-free experience for you to dive into the full potential of our app.\n\n If you don't witness the expected results within 30 days of your purchase, we stand by our commitment to provide a hassle-free refund. For detailed information, please refer to our "
+          }
+          <span className="underline">Subscription Policy.</span>
+        </span>
+      </div>
+
 
       {/* slide 2 */}
       <div className="flex flex-col bg-[#FFFFFF] rounded-md p-4! gap-y-6">
@@ -480,30 +503,17 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
         <div className="flex flex-col gap-y-2">
           <FaqItem
             question="How do I get access to the app?"
-            answer="Once you've enrolled in a learning package, TeenCare will automatically create your account and send your login details via Zalo. Simply sign in with your phone number - no sign-up process, no complicated passwords."
+            answer="Once you've enrolled in a learning package, TeenCare will automatically create your account and send your login details via Whatsapp. Simply sign in with your phone number - no sign-up process, no complicated passwords."
           />
           <FaqItem
             question="How can I cancel my subscription?"
-            answer="If you'd like to pause or cancel your package, just reach out to our support team via Zalo or email us at hello@teencare.vn. We'll get back to you within 24 business hours."
+            answer="If you'd like to pause or cancel your package, just reach out to our support team via Whatsapp or email us at info@teencare.co. We'll get back to you within 24 business hours."
           />
           <FaqItem
             question="Why the TeenCare app?"
             answer="The TeenCare app brings everything into one place — your child's class schedule, Mentor 1:1 bookings, and learning progress updates. No more juggling messages across different channels; everything stays synced so you can focus on what matters most."
           />
         </div>
-      </div>
-
-      {/* slide 9 */}
-      <div className="flex flex-col bg-[#FFFFFF] rounded-md p-4! gap-y-4">
-        <p className="font-bold text-[18px] text-[#18181B]">
-          Money-Back Guarantee
-        </p>
-        <span className="font-medium text-[14px] text-[##52525B] whitespace-pre-line">
-          {
-            "Explore our app with confidence, backed by our Money-Back Guarantee. Our expertly crafted content ensures a risk-free experience for you to dive into the full potential of our app.\n\n If you don't witness the expected results within 30 days of your purchase, we stand by our commitment to provide a hassle-free refund. For detailed information, please refer to our "
-          }
-          <span className="underline">Subscription Policy.</span>
-        </span>
       </div>
 
       {/* slide 10 */}
