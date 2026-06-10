@@ -112,6 +112,7 @@ export default function SurveyPage() {
       "/images/paypal-pay.png",
       "/images/card-pay.png",
       "/images/pays.png",
+      "/images/moneyImage.webp",
     ];
 
     imagesToPreload.forEach((src) => {
