@@ -248,7 +248,7 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
       <div className="flex flex-col bg-[#FFFFFF] rounded-md p-4! gap-y-4">
         <div className="text-[#52525B] text-[14px]">
           <span>
-            Your 3 month plan now includes a discounted intro price. After the 3 month intro period ends, your subscription will renew at the standard price of $59.99 every 3 months and will continue to bill every 3 months until you cancel. You can cancel anytime in your account at vocalimage.app, in the app settings, or by contacting us at info@teencare.vn. Please note: deleting or removing the app does not cancel your subscription.
+            Your 3 month plan now includes a discounted intro price. After the 3 month intro period ends, your subscription will renew at the standard price of $59.99 every 3 months and will continue to bill every 3 months until you cancel. You can cancel anytime in your account at vocalimage.app, in the app settings, or by contacting us at info@teencare.co. Please note: deleting or removing the app does not cancel your subscription.
           </span>
         </div>
         <div className="text-center flex gap-2 justify-center items-center">
