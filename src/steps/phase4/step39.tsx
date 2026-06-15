@@ -259,7 +259,7 @@ const CustomPage39 = ({ onNext }: { onNext: () => void }) => {
         </div>
         <div className="relative h-5.5! w-full! flex justify-center items-center">
           <Image
-            src="/images/pays.png"
+            src="/images/pay.webp"
             alt="Survey Image"
             fill
             sizes="328px"

@@ -111,7 +111,7 @@ export default function SurveyPage() {
       "/images/google-pay.png",
       "/images/paypal-pay.png",
       "/images/card-pay.png",
-      "/images/pays.png",
+      "/images/pay.webp",
       "/images/moneyImage.webp",
     ];
 
